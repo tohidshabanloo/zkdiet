@@ -8,7 +8,7 @@ const Header = () => {
       <div>
         <Link href="/" className="flex items-center space-x-2 anim">
           <img
-            src="https://res.cloudinary.com/dklruuoze/image/upload/v1661691912/Ideas/user/l84h1gcshyb169tocjo1.jpg"
+            src="/tohid.jpg"
             className="rounded-full w-12 h-12 object-cover border-2 border-pink-300 p-[1.5px]"
             alt="logo"
           />

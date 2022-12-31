@@ -26,9 +26,10 @@ export default defineType({
       to: { type: "author" },
     }),
     defineField({
-      name: "mainImage",
-      title: "Main image",
-      type: "image",
+      name: "coverImage",
+      title: "Cover Image",
+      type: "cloudinary.asset",
+      description: "This asset is served from Cloudinary",
       options: {
         hotspot: true,
       },

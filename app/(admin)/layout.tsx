@@ -1,12 +1,16 @@
+import "../../styles/globals.css";
+import "../../styles/font.css";
+
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html dir="ltr">
       <head />
+
       <body>{children}</body>
     </html>
-  )
+  );
 }
