@@ -8,7 +8,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html dir="rtl">
       <head />
       <body className="max-w-7xl mx-auto">
         <Header />

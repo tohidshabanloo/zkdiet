@@ -8,7 +8,7 @@ import Link from "next/link";
 type Props = {
   postData: Posts;
 };
-//s
+
 const Post = ({ postData }: Props) => {
   return (
     <div className=" p-4 relative  overflow-hidden group">
