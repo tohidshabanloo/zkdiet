@@ -10,15 +10,21 @@ const Header = () => {
           <img
             src="https://res.cloudinary.com/dklruuoze/image/upload/v1661691912/Ideas/user/l84h1gcshyb169tocjo1.jpg"
             className="rounded-full w-12 h-12 object-cover border-2 border-pink-300 p-[1.5px]"
-            alt="logo" 
+            alt="logo"
           />
-          <h3 className="font-semibold text-sm md:text-base">Farhad-Blog</h3>
+          <h3 className="font-semibold text-gray-500 pr-4 text-2xl md:text-base ">
+            خانه یوگا
+          </h3>
         </Link>
       </div>
       {/* Right */}
       <div>
-        <Link target="_blank" href="https://landfolio.vercel.app/" className="btn text-xs md:text-base font-semibold">
-          Click here to see my Portfolio!!
+        <Link
+          target="_blank"
+          href="https://www.tohidsh.com/"
+          className="btn text-xs md:text-base font-semibold"
+        >
+          Click here to see backpacker website
         </Link>
       </div>
     </header>
