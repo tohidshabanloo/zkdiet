@@ -25,9 +25,10 @@ export default defineType({
       type: "reference",
       to: { type: "author" },
     }),
+
     defineField({
-      name: "coverImage",
-      title: "Cover Image",
+      name: "mainImage",
+      title: "Main image",
       type: "cloudinary.asset",
       description: "This asset is served from Cloudinary",
       options: {

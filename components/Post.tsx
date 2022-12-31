@@ -16,7 +16,7 @@ const Post = ({ postData }: Props) => {
         {/* Top */}
         <div className="relative w-full h-80 drop-shadow-lg">
           <Image
-            src={urlFor(postData.mainImage).url()}
+            src={postData.mainImage.url}
             className="group-hover:scale-105 duration-200 rounded-t-lg ease-linear cursor-pointer object-cover"
             alt={postData.author.name}
             fill
