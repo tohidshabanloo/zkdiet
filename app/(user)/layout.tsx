@@ -1,5 +1,8 @@
+"use client";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import ThemeChanger from "../../components/ThemeChanger";
+import { ThemeProvider } from "next-themes";
 import "../../styles/globals.css";
 import "../../styles/font.css";
 
@@ -10,12 +13,14 @@ export default function RootLayout({
 }) {
   return (
     <html dir="rtl">
-      <head />
-      <body className="max-w-7xl mx-auto">
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <ThemeProvider attribute="class">
+        <head />
+        <body className="max-w-7xl mx-auto">
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </ThemeProvider>
     </html>
   );
 }
