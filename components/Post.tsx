@@ -24,27 +24,30 @@ const Post = ({ postData }: Props) => {
 
           {/* Center */}
           <div className="flex justify-between items-center group-hover:scale-105 duration-200 ease-linear absolute bottom-0 left-0 right-0 bg-[rgba(0,0,0,0.5)] text-white p-2 rounded-t-lg">
-            <div className="">
+            <div className="jus">
               <h1 className="mb-2 font-bold">{postData.title}</h1>
-              <span className="text-sm font-semibold text-gray-300">
+              {/* <span className="text-sm font-semibold text-gray-300">
                 {new Date(postData._createdAt).toLocaleDateString("en-US", {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
                 })}
-              </span>
+              </span> */}
+              <p className="line-clamp-2 text-sm text-gray-400 font-semibold">
+                {postData.description}
+              </p>
             </div>
-            <div className="space-x-2">
+            {/* <div className="space-x-2">
               {postData.categories.slice(0, 2).map((item) => (
                 <button className="btn text-xs sm:text-sm" key={item._id}>
                   {item.title}
                 </button>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
         {/* Bottom */}
-        <div className="mt-6 space-y-2">
+        {/* <div className="mt-6 space-y-2">
           <h2 className="font-bold">{postData.title}</h2>
 
           <p className="line-clamp-2 text-sm text-gray-400 font-semibold">
@@ -52,10 +55,10 @@ const Post = ({ postData }: Props) => {
           </p>
 
           <div className="font-bold flex items-center space-x-2 text-purple-500 anim">
-            <span>Read Post </span>
+            <span>بیشتر </span>
             <BsArrowDownRight />
           </div>
-        </div>
+        </div> */}
       </Link>
     </div>
   );

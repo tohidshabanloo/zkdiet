@@ -27,7 +27,6 @@ const HomePage = async () => {
   const bannerData: any = await client.fetch(bannerQuery);
   const postData: any = await client.fetch(postQuery);
   const categoriesData: any = await client.fetch(categoriesQuery);
-  
 
   if (previewData()) {
     return (
@@ -44,7 +43,7 @@ const HomePage = async () => {
         <Categories categoriesData={categoriesData} />
       </main>
       {/* Post */}
-      <div className="grid md:grid-cols-2 gap-10 gap-y-20 my-20 p-2 md:p-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 md:gap-x-6 lg:gap-x-4 gap-y-4 md:gap-y-15 mb-15">
         {postData.map((item: any) => (
           <Post key={item._id} postData={item} />
         ))}

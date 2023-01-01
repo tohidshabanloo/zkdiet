@@ -8,7 +8,7 @@ export default function Avatar({ name, picture }) {
           src={
             picture?.asset?._ref
               ? urlForImage(picture).height(96).width(96).fit("crop").url()
-              : "/favicon/tohid.jpg"
+              : "/yoga.png"
           }
           className="rounded-full"
           height={96}
