@@ -4,6 +4,7 @@ const headerNavLinks = [
   { href: "/projects", title: "پروژه ها" },
   { href: "/destinations", title: "مقصد ها" },
   { href: "/biography", title: "درمورد من" },
+  // { href: "/studio", title: " داشبورد ادمین" },
   // { href: '/resume', title: 'resume' },
 ];
 
