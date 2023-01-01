@@ -35,6 +35,7 @@ export interface Category extends Base {
 }
 
 export interface Image {
+  url: string | StaticImport;
   _type: "image";
   asset: Reference;
 }
