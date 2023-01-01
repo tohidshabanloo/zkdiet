@@ -4,6 +4,7 @@ import Banner from "../../../../components/Banner";
 import { RichTextComponents } from "../../../../components/RichTextComponents";
 import { client, urlFor } from "../../../../sanity";
 import { Posts } from "../../../../typings";
+import Image from "next/image";
 
 type Props = {
   params: {
@@ -47,12 +48,16 @@ const Post = async ({ params: { slug } }: Props) => {
       </div>
       <main className="p-2 md:p-4">
         {/* Post Banner */}
-        <div className="grid md:grid-cols-3 md:gap-x-10 gap-y-10 rounded-md shadow-lg bg-gradient-to-r from-[#FF928B] to-[#FFAC81] p-2 py-10 md:py-14 md:p-4 my-10">
+        {/* <div className="row justify-center md:grid-cols-3 md:gap-x-10 gap-y-10 rounded-md shadow-lg bg-gradient-to-r from-[#FF928B] to-[#FFAC81] p-2 py-10 md:py-14 md:p-4 my-10"> */}
+        <div className="row justify-center md:grid-cols-3 md:gap-x-10 gap-y-10 rounded-md shadow-lg  p-2 py-10 md:py-14 md:p-4 my-10">
           {/* Left */}
           <div className="space-y-6 col-span-2">
             <div className="">
-              <h1 className="font-bold text-2xl mb-2">{postData.title}</h1>
-              <span className="font-semibold text-gray-200">
+              <h1 className="flex justify-center font-bold text-2xl mb-2">
+                {postData.title}
+              </h1>
+
+              <span className="flex justify-center font-semibold text-gray-200">
                 {new Date(postData._createdAt).toLocaleDateString("en-US", {
                   day: "numeric",
                   month: "long",
@@ -60,16 +65,16 @@ const Post = async ({ params: { slug } }: Props) => {
                 })}
               </span>
             </div>
-            <p className="line-clamp-1 text-sm text-white">
+            {/* <p className="line-clamp-1 text-sm text-white">
               {postData.description}
-            </p>
+            </p> */}
           </div>
           {/* Rigth */}
-          <div className="flex flex-col sm:justify-between sm:items-center sm:text-center space-y-2">
+          <div className="flex flex-row sm:justify-center sm:items-center sm:text-center space-y-2">
             <div className="flex items-center space-x-2">
               <img
                 src={urlFor(postData.author.image).url()}
-                className="w-12 h-12 rounded-full object-cover p-[1.5px] border-2 border-red-300"
+                className=" w-12 h-12 rounded-full object-cover p-[1.5px] border-2 border-red-300"
                 alt={postData.author.name}
               />
               <h2 className="font-semibold">{postData.author.name}</h2>
@@ -84,6 +89,14 @@ const Post = async ({ params: { slug } }: Props) => {
           </div>
         </div>
         {/* Rich Text Editor */}
+        <div className="relative w-full h-80 drop-shadow-lg">
+          <Image
+            src={postData.mainImage.url}
+            className="group-hover:scale-105 duration-200 rounded-t-lg ease-linear cursor-pointer object-cover"
+            alt={postData.author.name}
+            fill
+          />
+        </div>
         <div>
           <PortableText value={postData.body} components={RichTextComponents} />
         </div>
