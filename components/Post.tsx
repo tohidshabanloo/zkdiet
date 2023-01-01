@@ -4,6 +4,7 @@ import { urlFor } from "../sanity";
 import { Posts } from "../typings";
 import { BsArrowDownRight } from "react-icons/bs";
 import Link from "next/link";
+import CoverImage from "./cover-image";
 
 type Props = {
   postData: Posts;
@@ -11,56 +12,37 @@ type Props = {
 
 const Post = ({ postData }: Props) => {
   return (
-    <div className=" p-4 relative  overflow-hidden group">
-      <Link href={`/post/${postData.slug.current}`}>
-        {/* Top */}
-        <div className="relative w-full h-80 drop-shadow-lg">
-          <Image
-            src={postData.mainImage.url}
-            className="group-hover:scale-105 duration-200 rounded-t-lg ease-linear cursor-pointer object-cover"
-            alt={postData.author.name}
-            fill
+    <Link href={`/post/${postData.slug.current}`}>
+      <div className="bg-gray-200 dark:bg-gray-800  rounded-lg p-2">
+        <div className="mb-5">
+          <CoverImage
+            image={postData.mainImage.url}
+            title={undefined}
+            slug={undefined}
+            priority={undefined}
           />
-
-          {/* Center */}
-          <div className="flex justify-between items-center group-hover:scale-105 duration-200 ease-linear absolute bottom-0 left-0 right-0 bg-[rgba(0,0,0,0.5)] text-white p-2 rounded-t-lg">
-            <div className="jus">
-              <h1 className="mb-2 font-bold">{postData.title}</h1>
-              {/* <span className="text-sm font-semibold text-gray-300">
+          <div className="">
+            <h3 className="px-2 mb-2 text-xl leading-snug  font-bold tracking-tighter">
+              {postData.title}
+            </h3>
+            <div className="mb-4 text-lg flex justify-center">
+              <span className="text-sm font-semibold text-gray-300">
                 {new Date(postData._createdAt).toLocaleDateString("en-US", {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
                 })}
-              </span> */}
-              <p className="line-clamp-2 text-sm text-gray-400 font-semibold">
-                {postData.description}
-              </p>
+              </span>
             </div>
-            {/* <div className="space-x-2">
-              {postData.categories.slice(0, 2).map((item) => (
-                <button className="btn text-xs sm:text-sm" key={item._id}>
-                  {item.title}
-                </button>
-              ))}
-            </div> */}
+            {postData.description ? (
+              <p className=" text-sm px-2 text-gray-500">
+                {`${postData.description}`.substring(0, 100)}...{" "}
+              </p>
+            ) : null}
           </div>
         </div>
-        {/* Bottom */}
-        {/* <div className="mt-6 space-y-2">
-          <h2 className="font-bold">{postData.title}</h2>
-
-          <p className="line-clamp-2 text-sm text-gray-400 font-semibold">
-            {postData.description}
-          </p>
-
-          <div className="font-bold flex items-center space-x-2 text-purple-500 anim">
-            <span>بیشتر </span>
-            <BsArrowDownRight />
-          </div>
-        </div> */}
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 
