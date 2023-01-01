@@ -20,5 +20,14 @@ export default defineType({
       title: "Description",
       type: "string",
     }),
+    defineField({
+      name: "bannerImage",
+      title: "Banner image",
+      type: "cloudinary.asset",
+      description: "This asset is served from Cloudinary",
+      options: {
+        hotspot: true,
+      },
+    }),
   ],
 });

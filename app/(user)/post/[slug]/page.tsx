@@ -43,9 +43,9 @@ const Post = async ({ params: { slug } }: Props) => {
   return (
     <section>
       {/* Banner */}
-      <div>
-        <Banner bannerData={bannerData[0]} />
-      </div>
+      {/* <div>
+        <Banner bannerData={bannerData[0]}  />
+      </div> */}
       <main className="p-2 md:p-4">
         {/* Post Banner */}
         {/* <div className="row justify-center md:grid-cols-3 md:gap-x-10 gap-y-10 rounded-md shadow-lg bg-gradient-to-r from-[#FF928B] to-[#FFAC81] p-2 py-10 md:py-14 md:p-4 my-10"> */}

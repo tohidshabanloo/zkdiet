@@ -10,10 +10,14 @@ type Base = {
 
 export interface Banners extends Base {
   description: string;
+  [x: string]: any;
+  body: Block[];
   header2: string;
   hedaer1: string;
+  bannerImage: Image;
 }
 export interface Posts extends Base {
+  [x: string]: any;
   author: Author;
   body: Block[];
   categories: Category[];

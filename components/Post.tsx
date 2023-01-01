@@ -21,11 +21,11 @@ const Post = ({ postData }: Props) => {
             slug={undefined}
             priority={undefined}
           />
-          <div className="">
-            <h3 className="px-2 mb-2 text-xl leading-snug  font-bold tracking-tighter">
+          <div className="mt-4">
+            <h3 className="text-gray-800 dark:text-gray-200 px-2 mb-2 text-xl leading-snug  font-bold tracking-tighter">
               {postData.title}
             </h3>
-            <div className="mb-4 text-lg flex justify-center">
+            {/* <div className="mb-4 text-lg flex justify-center">
               <span className="text-sm font-semibold text-gray-300">
                 {new Date(postData._createdAt).toLocaleDateString("en-US", {
                   day: "numeric",
@@ -33,7 +33,7 @@ const Post = ({ postData }: Props) => {
                   year: "numeric",
                 })}
               </span>
-            </div>
+            </div> */}
             {postData.description ? (
               <p className=" text-sm px-2 text-gray-500">
                 {`${postData.description}`.substring(0, 100)}...{" "}
