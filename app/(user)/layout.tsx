@@ -15,7 +15,7 @@ export default function RootLayout({
     <html dir="rtl">
       <ThemeProvider attribute="class">
         <head />
-        <body className="max-w-7xl mx-auto">
+        <body className="">
           <Header />
           {children}
           <Footer />
