@@ -4,6 +4,7 @@ import headerNavLinks from "../data/headerNavLinks";
 import Intro from "./intro";
 import ThemeChanger from "./ThemeChanger";
 import MobileNav from "./MobileNav";
+import dynamic from "next/dynamic";
 
 const Header = () => {
   return (
@@ -41,4 +42,6 @@ const Header = () => {
   );
 };
 
-export default Header;
+// export default Header;
+// this line below is for Solving Hydration Error in React.js/Next.js
+export default dynamic(() => Promise.resolve(Header), { ssr: false });
