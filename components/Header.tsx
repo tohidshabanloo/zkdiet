@@ -42,6 +42,6 @@ const Header = () => {
   );
 };
 
-// export default Header;
+export default Header;
 // this line below is for Solving Hydration Error in React.js/Next.js
-export default dynamic(() => Promise.resolve(Header), { ssr: false });
+// export default dynamic(() => Promise.resolve(Header), { ssr: false });
