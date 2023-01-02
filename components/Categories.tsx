@@ -16,16 +16,16 @@ const Categories = ({ categoriesData }: Props) => {
   };
 
   return (
-    <div className="p-2 md:p-4 space-x-4 my-10 overflow-x-scroll w-screen py-5 sm:overflow-x-hidden sm:py-0 sm:w-auto">
+    <div className="p-2">
       <Link
         href="/"
         className={
           path === "/"
-            ? "btn"
-            : "btn bg-transparent border border-pink-600 text-pink-600"
+            ? "inline-flex flex-wrap mx-2 bg-opacity-30 bg-red-600 dark:bg-red-800 px-3 py-2 rounded-md font-medium text-gray-900 dark:text-gray-200"
+            : "inline-flex flex-wrap mx-2 bg-opacity-30 bg-gray-200 dark:bg-gray-800 px-3 py-2 rounded-md font-medium text-gray-900 dark:text-gray-200"
         }
       >
-        Recent
+        جدیدترین
       </Link>
 
       {categoriesData.map((item: Category) => (
@@ -34,8 +34,8 @@ const Categories = ({ categoriesData }: Props) => {
           href={`/categories/${item.slug.current}`}
           className={
             activeLink(item)
-              ? "btn whitespace-nowrap"
-              : "btn bg-transparent border border-pink-600 text-pink-600 whitespace-nowrap"
+              ? "inline-flex flex-wrap mx-2 bg-opacity-30 bg-red-600 dark:bg-red-800 px-3 py-2 rounded-md font-medium text-gray-900 dark:text-gray-200"
+              : "inline-flex flex-wrap mx-2 bg-opacity-30 bg-gray-200 dark:bg-gray-800 px-3 py-2 rounded-md font-medium text-gray-900 dark:text-gray-200"
           }
         >
           {item.title}

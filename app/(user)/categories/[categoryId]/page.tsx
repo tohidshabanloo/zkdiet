@@ -55,13 +55,13 @@ const CategoryId = async ({ params: { categoryId } }: Props) => {
       </div>
       <main>
         {postData.length === 1 ? (
-          <div className="mx-auto gap-10 gap-y-20 sm:w-[35rem] my-20 p-2 md:p-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 md:gap-x-6 lg:gap-x-4 gap-y-4 md:gap-y-15 mb-15">
             {postData.map((item: Posts) => (
               <Post key={item._id} postData={item} />
             ))}
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 gap-10 gap-y-20 pl my-20 p-2 md:p-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 md:gap-x-6 lg:gap-x-4 gap-y-4 md:gap-y-15 mb-15">
             {postData.map((item: Posts) => (
               <Post key={item._id} postData={item} />
             ))}

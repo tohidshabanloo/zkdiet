@@ -7,7 +7,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html dir="ltr">
+    <html dir="rtl">
       <head />
 
       <body>{children}</body>

@@ -6,7 +6,6 @@ import { ThemeProvider } from "next-themes";
 import "../../styles/globals.css";
 import "../../styles/font.css";
 
-
 export default function RootLayout({
   children,
 }: {
