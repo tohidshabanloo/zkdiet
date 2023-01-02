@@ -89,7 +89,7 @@ const Post = async ({ params: { slug } }: Props) => {
       </div> */}
       <div className="p-2 md:p-4 ">
         {/* Post Banner */}
-        <div className="row justify-center  md:gap-x-10 gap-y-10 rounded-md shadow-lg  p-2 py-10 md:py-14 md:p-4 my-10">
+        <div className="md:gap-x-10 gap-y-10 rounded-md shadow-lg  p-2 py-10 md:py-14 md:p-4 my-10">
           {/* Left */}
           <div className="flex justify-center">
             <div className="">
@@ -129,10 +129,10 @@ const Post = async ({ params: { slug } }: Props) => {
           </div>
         </div>
         {/* Rich Text Editor */}
-        <div className="relative w-full h-80 drop-shadow-lg">
+        <div className=" w-full h-1/2 drop-shadow-lg">
           <Image
             src={postData.mainImage.url}
-            className="group-hover:scale-105 duration-200 rounded-t-lg ease-linear cursor-pointer object-cover"
+            className=""
             alt={postData.author.name}
             fill
           />
