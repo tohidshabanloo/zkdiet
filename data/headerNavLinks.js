@@ -1,9 +1,9 @@
 const headerNavLinks = [
-  { href: "/blog", title: "بلاگ" },
+  // { href: "/blog", title: "بلاگ" },
   // { href: '/tags', title: 'Tags' },
-  { href: "/projects", title: "پروژه ها" },
-  { href: "/destinations", title: "مقصد ها" },
-  { href: "/biography", title: "درمورد من" },
+  { href: "/projects", title: "برنامه ها" },
+  { href: "/courses", title: "دوره ها" },
+  { href: "/biography", title: "درمورد ما" },
   // { href: "/studio", title: " داشبورد ادمین" },
   // { href: '/resume', title: 'resume' },
 ];

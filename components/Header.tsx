@@ -20,6 +20,7 @@ const Header = () => {
         <div className="hidden sm:block">
           <Link
             href="/studio"
+            target="_blank"
             // className="inline-flex flex-wrap p-1 font-medium text-gray-900 sm:p-4 dark:text-gray-100"
             className="inline-flex flex-wrap mx-2 bg-opacity-30 bg-red-600 dark:bg-red-800 px-3 py-2 rounded-md font-medium text-gray-900 dark:text-gray-200"
           >

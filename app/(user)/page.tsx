@@ -2,6 +2,7 @@ import { previewData } from "next/headers";
 import { groq } from "next-sanity";
 import React from "react";
 import Banner from "../../components/Banner";
+import Alert from "../../components/alert";
 import Post from "../../components/Post";
 import { client } from "../../sanity";
 import PreviewPost from "../../components/PreviewPost";
@@ -39,9 +40,11 @@ const HomePage = async () => {
   return (
     <div>
       <main>
+        <Alert preview={undefined} />
         <div className="m-4 border bg-gray-200 dark:bg-gray-800 px-3 py-2 rounded-md font-medium text-gray-900 dark:text-gray-200 ">
           <Banner bannerData={bannerData[0]} />
         </div>
+
         <Categories categoriesData={categoriesData} />
       </main>
       {/* Post */}
