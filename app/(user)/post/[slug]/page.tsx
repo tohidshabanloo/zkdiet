@@ -82,23 +82,22 @@ const Post = async ({ params: { slug } }: Props) => {
   const postData: Posts = await client.fetch(postQuery, { slug });
 
   return (
-    <section>
+    <section className="flex justify-center   ">
       {/* Banner */}
       {/* <div>
         <Banner bannerData={bannerData[0]}  />
       </div> */}
-      <main className="p-2 md:p-4 ">
+      <div className="p-2 md:p-4 ">
         {/* Post Banner */}
-        {/* <div className="row justify-center md:grid-cols-3 md:gap-x-10 gap-y-10 rounded-md shadow-lg bg-gradient-to-r from-[#FF928B] to-[#FFAC81] p-2 py-10 md:py-14 md:p-4 my-10"> */}
-        <div className="row justify-center md:grid-cols-3 md:gap-x-10 gap-y-10 rounded-md shadow-lg  p-2 py-10 md:py-14 md:p-4 my-10">
+        <div className="row justify-center  md:gap-x-10 gap-y-10 rounded-md shadow-lg  p-2 py-10 md:py-14 md:p-4 my-10">
           {/* Left */}
-          <div className="space-y-6 col-span-2">
+          <div className="flex justify-center">
             <div className="">
-              <h1 className="flex justify-center font-bold text-2xl mb-2">
+              <h1 className=" text-center font-bold text-2xl mb-2">
                 {postData.title}
               </h1>
 
-              <span className="flex justify-center font-semibold text-gray-200">
+              <span className="flex justify-center  font-semibold text-gray-200">
                 {new Date(postData._createdAt).toLocaleDateString("en-US", {
                   day: "numeric",
                   month: "long",
@@ -111,7 +110,7 @@ const Post = async ({ params: { slug } }: Props) => {
             </p> */}
           </div>
           {/* Rigth */}
-          <div className="flex flex-row sm:justify-center sm:items-center sm:text-center space-y-2">
+          <div className="flex justify-center sm:justify-center sm:items-center sm:text-center space-y-2">
             <div className="flex items-center space-x-2">
               <img
                 src={urlFor(postData.author.image).url()}
@@ -142,7 +141,7 @@ const Post = async ({ params: { slug } }: Props) => {
           {/* <PortableText value={postData.body} components={RichTextComponents} /> */}
           <PostBody content={postData.body} />
         </div>
-      </main>
+      </div>
     </section>
   );
 };
