@@ -128,14 +128,14 @@ const Post = async ({ params: { slug } }: Props) => {
             </div>
           </div>
         </div>
-        {/* Rich Text Editor */}
-        <div className=" w-full h-1/2 drop-shadow-lg">
+        <div className="w-full h-80 drop-shadow-lg">
           <Image
             src={postData.mainImage.url}
-            className=""
+            className="group-hover:scale-105 duration-200 rounded-t-lg ease-linear cursor-pointer object-cover"
             alt={postData.author.name}
             fill
           />
+        {/* Rich Text Editor */}
         </div>
         <div>
           {/* <PortableText value={postData.body} components={RichTextComponents} /> */}
