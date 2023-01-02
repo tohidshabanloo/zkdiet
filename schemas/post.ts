@@ -2,17 +2,17 @@ import { defineField, defineType } from "sanity";
 
 export default defineType({
   name: "post",
-  title: "Post",
+  title: "پست",
   type: "document",
   fields: [
     defineField({
       name: "title",
-      title: "Title",
+      title: "عنوان",
       type: "string",
     }),
     defineField({
       name: "slug",
-      title: "Slug",
+      title: "اسلاگ",
       type: "slug",
       options: {
         source: "title",
@@ -21,14 +21,14 @@ export default defineType({
     }),
     defineField({
       name: "author",
-      title: "Author",
+      title: "نویسنده",
       type: "reference",
       to: { type: "author" },
     }),
 
     defineField({
       name: "mainImage",
-      title: "Main image",
+      title: "کاور پست",
       type: "cloudinary.asset",
       description: "This asset is served from Cloudinary",
       options: {
@@ -37,23 +37,23 @@ export default defineType({
     }),
     defineField({
       name: "categories",
-      title: "Categories",
+      title: "دسته بندی ها",
       type: "array",
       of: [{ type: "reference", to: { type: "category" } }],
     }),
     defineField({
       name: "publishedAt",
-      title: "Published at",
+      title: "تاریخ انتشار",
       type: "datetime",
     }),
     defineField({
       name: "body",
-      title: "Body",
+      title: "محتوای پست",
       type: "blockContent",
     }),
     defineField({
       name: "description",
-      title: "Description",
+      title: "توضیحات پست",
       type: "string",
     }),
   ],

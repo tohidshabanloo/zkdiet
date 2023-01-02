@@ -2,17 +2,17 @@ import { defineField, defineType } from "sanity";
 
 export default defineType({
   name: "author",
-  title: "Author",
+  title: "نویسنده",
   type: "document",
   fields: [
     defineField({
       name: "name",
-      title: "Name",
+      title: "نام",
       type: "string",
     }),
     defineField({
       name: "slug",
-      title: "Slug",
+      title: "اسلاگ",
       type: "slug",
       options: {
         source: "name",
@@ -21,7 +21,7 @@ export default defineType({
     }),
     defineField({
       name: "image",
-      title: "Image",
+      title: "عکس",
       type: "image",
       options: {
         hotspot: true,

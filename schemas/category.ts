@@ -2,22 +2,22 @@ import { defineField, defineType } from "sanity";
 
 export default defineType({
   name: "category",
-  title: "Category",
+  title: "دسته بندی",
   type: "document",
   fields: [
     defineField({
       name: "title",
-      title: "Title",
+      title: "عنوان",
       type: "string",
     }),
     defineField({
       name: "description",
-      title: "Description",
+      title: "توضیحات",
       type: "text",
     }),
     defineField({
       name: "slug",
-      title: "Slug",
+      title: "اسلاگ",
       type: "slug",
       options: {
         source: "title",

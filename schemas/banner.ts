@@ -2,27 +2,27 @@ import { defineField, defineType } from "sanity";
 
 export default defineType({
   name: "banner",
-  title: "Banner",
+  title: "بنر",
   type: "document",
   fields: [
     defineField({
       name: "hedaer1",
-      title: "Hedaer1",
+      title: "بنر اول",
       type: "string",
     }),
     defineField({
       name: "header2",
-      title: "Header2",
+      title: "بنر دوم",
       type: "string",
     }),
     defineField({
       name: "description",
-      title: "Description",
+      title: "توضیحات",
       type: "string",
     }),
     defineField({
       name: "bannerImage",
-      title: "Banner image",
+      title: "عکس بنر",
       type: "cloudinary.asset",
       description: "This asset is served from Cloudinary",
       options: {
