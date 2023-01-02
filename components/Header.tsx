@@ -17,6 +17,13 @@ const Header = () => {
       <div className="ml-2 max-w-3xl md:px-6 md:mx-auto sm:px-6 xl:max-w-5xl xl:px-20 flex items-center text-base leading-5">
         <ThemeChanger />
         <div className="hidden sm:block">
+          <Link
+            href="/studio"
+            // className="inline-flex flex-wrap p-1 font-medium text-gray-900 sm:p-4 dark:text-gray-100"
+            className="inline-flex flex-wrap mx-2 bg-opacity-30 bg-red-600 dark:bg-red-800 px-3 py-2 rounded-md font-medium text-gray-900 dark:text-gray-200"
+          >
+            داشبورد مدیر
+          </Link>
           {headerNavLinks.map((link) => (
             <Link
               key={link.title}

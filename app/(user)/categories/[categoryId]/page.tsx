@@ -50,7 +50,7 @@ const CategoryId = async ({ params: { categoryId } }: Props) => {
     <div>
       {/* Banner */}
       <div>
-        <Banner bannerData={bannerData[0]} postData={undefined} />
+        <Banner bannerData={bannerData[0]} />
         <Categories categoriesData={categoriesData} />
       </div>
       <main>

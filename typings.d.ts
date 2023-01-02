@@ -15,6 +15,7 @@ export interface Banners extends Base {
   header2: string;
   hedaer1: string;
   bannerImage: Image;
+  
 }
 export interface Posts extends Base {
   [x: string]: any;

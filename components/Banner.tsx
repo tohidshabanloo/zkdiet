@@ -6,7 +6,7 @@ import Image from "next/image";
 
 type Props = {
   bannerData: Banners;
-  postData: Posts;
+  
 };
 
 const Banner = ({ bannerData }: Props) => {
