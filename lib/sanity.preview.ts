@@ -1,12 +1,19 @@
 "use client";
 
 import { definePreview } from "next-sanity/preview";
+import { projectId, dataset } from "./sanity.client";
+import { fromMutationPatches } from "sanity";
 
 function onPublicAccessOnly() {
-  throw new Error(`Unable to load preview as you're not logged in`);
+  throw new Error(`نمیتونیم محتوا را نمایش دهیم چوت شما وارد نشدید`);
+}
+if (!projectId || !dataset) {
+  throw new Error(
+    "آیدی پروژه یا دیتاست درست نیست. فایل سنیتی جیسون یا ای ان وی رو چک کنید"
+  );
 }
 export const usePreview = definePreview({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  projectId,
+  dataset,
   onPublicAccessOnly,
 });

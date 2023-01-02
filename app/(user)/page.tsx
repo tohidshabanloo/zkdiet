@@ -22,16 +22,16 @@ const postQuery = groq`
 
 export const revalidate = 30; //Revalidate the page after 30sec
 
-// Preview Mode
-
 const HomePage = async () => {
   const bannerData: any = await client.fetch(bannerQuery);
   const postData: any = await client.fetch(postQuery);
   const categoriesData: any = await client.fetch(categoriesQuery);
+ 
 
+  // Preview Mode
   if (previewData()) {
     return (
-      <PreviewSuspense fallback="Loading...">
+      <PreviewSuspense fallback="Loading Preview Mode Data...">
         <PreviewPost query={postQuery} />
       </PreviewSuspense>
     );
