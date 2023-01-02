@@ -5,6 +5,7 @@ import { RichTextComponents } from "../../../../components/RichTextComponents";
 import { client, urlFor } from "../../../../sanity";
 import { Posts } from "../../../../typings";
 import Image from "next/image";
+import PostBody from "../../../../components/post-body";
 
 type Props = {
   params: {
@@ -19,6 +20,46 @@ const postQuery = groq`
   author->,
   categories[]->
 }`;
+const ptComponents = {
+  types: {
+    cloudinary: ({ value }: { value: any }) => {
+      if (value?.asset?.url) {
+        return null;
+      }
+      return (
+        <img
+          alt={value.alt || " "}
+          title={value.alt || " "}
+          loading="lazy"
+          src={value?.url}
+          width={600}
+          height={240}
+          className="mx-auto my-6 rounded-md text-center"
+        />
+      );
+    },
+  },
+  block: {
+    h2: ({ value }: { value: any }) => {
+      if (!value?.children[0].text) {
+        return null;
+      }
+      return <h2 className="py-6">{value?.children[0].text}</h2>;
+    },
+    h3: ({ value }: { value: any }) => {
+      if (!value?.children[0].text) {
+        return null;
+      }
+      return <h3 className="py-6">{value?.children[0].text}</h3>;
+    },
+    normal: ({ value }: { value: any }) => {
+      if (!value?.children[0].text) {
+        return null;
+      }
+      return <p className="leading-8">{value?.children[0].text}</p>;
+    },
+  },
+};
 
 export const revalidate = 30; //Revalidate the page after 30sec
 
@@ -46,7 +87,7 @@ const Post = async ({ params: { slug } }: Props) => {
       {/* <div>
         <Banner bannerData={bannerData[0]}  />
       </div> */}
-      <main className="p-2 md:p-4">
+      <main className="p-2 md:p-4 ">
         {/* Post Banner */}
         {/* <div className="row justify-center md:grid-cols-3 md:gap-x-10 gap-y-10 rounded-md shadow-lg bg-gradient-to-r from-[#FF928B] to-[#FFAC81] p-2 py-10 md:py-14 md:p-4 my-10"> */}
         <div className="row justify-center md:grid-cols-3 md:gap-x-10 gap-y-10 rounded-md shadow-lg  p-2 py-10 md:py-14 md:p-4 my-10">
@@ -98,7 +139,8 @@ const Post = async ({ params: { slug } }: Props) => {
           />
         </div>
         <div>
-          <PortableText value={postData.body} components={RichTextComponents} />
+          {/* <PortableText value={postData.body} components={RichTextComponents} /> */}
+          <PostBody content={postData.body} />
         </div>
       </main>
     </section>
