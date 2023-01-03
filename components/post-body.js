@@ -1,4 +1,5 @@
 import { PortableText } from "@portabletext/react";
+import markdownStyles from "../components/markdown-styles.module.css";
 
 export default function PostBody({ content }) {
   const ptComponents = {
@@ -21,6 +22,13 @@ export default function PostBody({ content }) {
       },
     },
     block: {
+      bold: ({ value }) => {
+        if (!value?.children[0].text) {
+          return null;
+        }
+        return <h2 className="py-6 font-bold">{value?.children[0].text}</h2>;
+      },
+
       h2: ({ value }) => {
         if (!value?.children[0].text) {
           return null;
@@ -43,7 +51,7 @@ export default function PostBody({ content }) {
   };
 
   return (
-    <div className={`max-w-2xl mx-auto `}>
+    <div className={`max-w-2xl mx-auto ${markdownStyles.markdown}`}>
       <PortableText value={content} components={ptComponents} />
     </div>
   );

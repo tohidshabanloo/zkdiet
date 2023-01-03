@@ -20,46 +20,46 @@ const postQuery = groq`
   author->,
   categories[]->
 }`;
-const ptComponents = {
-  types: {
-    cloudinary: ({ value }: { value: any }) => {
-      if (value?.asset?.url) {
-        return null;
-      }
-      return (
-        <img
-          alt={value.alt || " "}
-          title={value.alt || " "}
-          loading="lazy"
-          src={value?.url}
-          width={600}
-          height={240}
-          className="mx-auto my-6 rounded-md text-center"
-        />
-      );
-    },
-  },
-  block: {
-    h2: ({ value }: { value: any }) => {
-      if (!value?.children[0].text) {
-        return null;
-      }
-      return <h2 className="py-6">{value?.children[0].text}</h2>;
-    },
-    h3: ({ value }: { value: any }) => {
-      if (!value?.children[0].text) {
-        return null;
-      }
-      return <h3 className="py-6">{value?.children[0].text}</h3>;
-    },
-    normal: ({ value }: { value: any }) => {
-      if (!value?.children[0].text) {
-        return null;
-      }
-      return <p className="leading-8">{value?.children[0].text}</p>;
-    },
-  },
-};
+// const ptComponents = {
+//   types: {
+//     cloudinary: ({ value }: { value: any }) => {
+//       if (value?.asset?.url) {
+//         return null;
+//       }
+//       return (
+//         <img
+//           alt={value.alt || " "}
+//           title={value.alt || " "}
+//           loading="lazy"
+//           src={value?.url}
+//           width={600}
+//           height={240}
+//           className="mx-auto my-6 rounded-md text-center"
+//         />
+//       );
+//     },
+//   },
+//   block: {
+//     h2: ({ value }: { value: any }) => {
+//       if (!value?.children[0].text) {
+//         return null;
+//       }
+//       return <h2 className="py-6">{value?.children[0].text}</h2>;
+//     },
+//     h3: ({ value }: { value: any }) => {
+//       if (!value?.children[0].text) {
+//         return null;
+//       }
+//       return <h3 className="py-6">{value?.children[0].text}</h3>;
+//     },
+//     normal: ({ value }: { value: any }) => {
+//       if (!value?.children[0].text) {
+//         return null;
+//       }
+//       return <p className="leading-8">{value?.children[0].text}</p>;
+//     },
+//   },
+// };
 
 export const revalidate = 30; //Revalidate the page after 30sec
 
@@ -128,14 +128,15 @@ const Post = async ({ params: { slug } }: Props) => {
             </div>
           </div>
         </div>
-        <div className="w-full h-80 drop-shadow-lg">
+        <div className="">
           <Image
             src={postData.mainImage.url}
-            className="group-hover:scale-105 duration-200 rounded-t-lg ease-linear cursor-pointer object-cover"
+            className=""
             alt={postData.author.name}
-            fill
+            width={600}
+            height={310}
           />
-        {/* Rich Text Editor */}
+          {/* Rich Text Editor */}
         </div>
         <div>
           {/* <PortableText value={postData.body} components={RichTextComponents} /> */}
