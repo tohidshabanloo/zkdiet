@@ -81,6 +81,50 @@ const Post = async ({ params: { slug } }: Props) => {
   const bannerData: any = await client.fetch(bannerQuery);
   const postData: Posts = await client.fetch(postQuery, { slug });
 
+
+
+  const ptComponents = {
+    types: {
+      cloudinary: ({ value }:{ value: any }) => {
+        if (value?.asset?.url) {
+          return null
+        }
+        return (
+          <img
+            alt={value.alt || ' '}
+            title={value.alt || ' '}
+            loading="lazy"
+            src={value?.url}
+            width={600}
+            height={240}
+            className="mx-auto my-6 rounded-md text-center"
+          />
+        )
+      },
+    },
+    block: {
+      h2: ({ value }:{ value: any }) => {
+        if (!value?.children[0].text) {
+          return null
+        }
+        return <h2 className="py-6">{value?.children[0].text}</h2>
+      },
+      h3: ({ value }:{ value: any }) => {
+        if (!value?.children[0].text) {
+          return null
+        }
+        return <h3 className="py-6">{value?.children[0].text}</h3>
+      },
+      normal: ({ value }:{ value: any }) => {
+        if (!value?.children[0].text) {
+          return null
+        }
+        return <p className="leading-8">{value?.children[0].text}</p>
+      },
+    },
+  }
+
+  console.log(postData)
   return (
     <section className="flex justify-center   ">
       {/* Banner */}
@@ -98,11 +142,13 @@ const Post = async ({ params: { slug } }: Props) => {
               </h1>
 
               <span className="flex justify-center  font-semibold text-gray-200">
-                {new Date(postData._createdAt).toLocaleDateString("en-US", {
+                {new Date(postData._createdAt).toLocaleDateString("fa-IR", {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
                 })}
+
+                
               </span>
             </div>
             {/* <p className="line-clamp-1 text-sm text-white">
@@ -110,15 +156,15 @@ const Post = async ({ params: { slug } }: Props) => {
             </p> */}
           </div>
           {/* Rigth */}
-          <div className="flex justify-center sm:justify-center sm:items-center sm:text-center space-y-2">
+          <div className="gap-2 flex justify-center sm:justify-center sm:items-center sm:text-center space-y-2">
             <div className="flex items-center space-x-2">
               <img
                 src={urlFor(postData.author.image).url()}
                 className=" w-12 h-12 rounded-full object-cover p-[1.5px] border-2 border-red-300"
                 alt={postData.author.name}
               />
-              <h2 className="font-semibold">{postData.author.name}</h2>
             </div>
+            <h2 className="font-semibold whitespace-nowrap leading-6">{postData.author.name}</h2>
             <div className="space-y-3">
               {postData.categories.map((item) => (
                 <button className="btn py-1 px-2 mr-2 flex-wrap" key={item._id}>
@@ -141,6 +187,7 @@ const Post = async ({ params: { slug } }: Props) => {
         <div>
           {/* <PortableText value={postData.body} components={RichTextComponents} /> */}
           <PostBody content={postData.body} />
+          {/* <PortableText value={postData.body} components={ptComponents} /> */}
         </div>
       </div>
     </section>
