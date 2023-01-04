@@ -16,7 +16,7 @@ const Banner = ({ bannerData }: Props) => {
         <h1 className="text-3xl lg:text-2xl md:text-lg font-bold">
           {bannerData.hedaer1}
         </h1>
-        <h2 className="font-semibold text-gray-500 tracking-widetext-sm md:text-xs  text-justify">
+        <h2 className="font-semibold text-gray-500 tracking-widetext-sm md:text-x  text-justify">
           {bannerData.header2}
         </h2>
         <h2 className="text-gray-400 text-sm md:text-xs font-bold text-justify">

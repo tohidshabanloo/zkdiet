@@ -21,6 +21,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Post.tsx", "app/(user)/categories/[categoryId]/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Post.tsx", "app/(user)/categories/[categoryId]/page.tsx", "components/MultiBannerSlider.jsx", "components/BannerSlider.tsx"],
   "exclude": ["node_modules"]
 }

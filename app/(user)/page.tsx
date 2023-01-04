@@ -8,6 +8,7 @@ import { client } from "../../sanity";
 import PreviewPost from "../../components/PreviewPost";
 import PreviewSuspense from "../../components/PreviewSuspense";
 import Categories from "../../components/Categories";
+import BannerSlider from "../../components/BannerSlider";
 
 const bannerQuery = groq`
 *[_type == "banner"]`;
@@ -37,22 +38,25 @@ const HomePage = async () => {
   }
 
   return (
-    <div>
-      <main>
-        <Alert preview={undefined} />
-        <div className="m-4 border bg-gray-200 dark:bg-gray-800 px-3 py-2 rounded-md font-medium text-gray-900 dark:text-gray-200 ">
+    <>
+      <div>
+        <main>
+          <Alert preview={undefined} />
+          <BannerSlider bannerData={bannerData} />
+          {/* <div className="m-4 border bg-gray-200 dark:bg-gray-800 px-3 py-2 rounded-md font-medium text-gray-900 dark:text-gray-200 ">
           <Banner bannerData={bannerData[0]} />
-        </div>
+        </div> */}
 
-        <Categories categoriesData={categoriesData} />
-      </main>
-      {/* Post */}
-      <div className=" max-w-screen-lg gap-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-auto py-2 px-2">
-        {postData.map((item: any) => (
-          <Post key={item._id} postData={item} />
-        ))}
+          <Categories categoriesData={categoriesData} />
+        </main>
+        {/* Post */}
+        <div className=" max-w-screen-lg gap-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-auto py-2 px-2">
+          {postData.map((item: any) => (
+            <Post key={item._id} postData={item} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
