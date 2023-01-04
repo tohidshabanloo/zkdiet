@@ -12,9 +12,9 @@ type Props = {
 
 const Post = ({ postData }: Props) => {
   return (
-    <div className="">
+    <div className="rounded bg-gray-200 dark:bg-gray-800 font-inter w-full overflow-hidden shadow-lg">
       <Link href={`/post/${postData.slug.current}`}>
-        <div className="bg-gray-200 dark:bg-gray-800  rounded-lg p-2">
+        <div className="bg-gray-200 dark:bg-gray-800  rounded-lg p-2 ">
           <div className="mb-5">
             <CoverImage
               image={postData.mainImage.url}
@@ -22,7 +22,7 @@ const Post = ({ postData }: Props) => {
               slug={undefined}
               priority={undefined}
             />
-            <div className="mt-4 ">
+            <div className="mt-4  ">
               <h3 className="text-gray-800 dark:text-gray-200 px-2 mb-2 text-xl leading-snug  font-bold tracking-tighter">
                 {postData.title}
               </h3>
