@@ -555,3 +555,7 @@ ol {
   --background: black;
   --foreground: white;
 }
+
+.swiper-wrapper {
+  display: inline-flex;
+}

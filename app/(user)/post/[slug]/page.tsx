@@ -81,50 +81,47 @@ const Post = async ({ params: { slug } }: Props) => {
   const bannerData: any = await client.fetch(bannerQuery);
   const postData: Posts = await client.fetch(postQuery, { slug });
 
-
-
   const ptComponents = {
     types: {
-      cloudinary: ({ value }:{ value: any }) => {
+      cloudinary: ({ value }: { value: any }) => {
         if (value?.asset?.url) {
-          return null
+          return null;
         }
         return (
           <img
-            alt={value.alt || ' '}
-            title={value.alt || ' '}
+            alt={value.alt || " "}
+            title={value.alt || " "}
             loading="lazy"
             src={value?.url}
             width={600}
             height={240}
             className="mx-auto my-6 rounded-md text-center"
           />
-        )
+        );
       },
     },
     block: {
-      h2: ({ value }:{ value: any }) => {
+      h2: ({ value }: { value: any }) => {
         if (!value?.children[0].text) {
-          return null
+          return null;
         }
-        return <h2 className="py-6">{value?.children[0].text}</h2>
+        return <h2 className="py-6">{value?.children[0].text}</h2>;
       },
-      h3: ({ value }:{ value: any }) => {
+      h3: ({ value }: { value: any }) => {
         if (!value?.children[0].text) {
-          return null
+          return null;
         }
-        return <h3 className="py-6">{value?.children[0].text}</h3>
+        return <h3 className="py-6">{value?.children[0].text}</h3>;
       },
-      normal: ({ value }:{ value: any }) => {
+      normal: ({ value }: { value: any }) => {
         if (!value?.children[0].text) {
-          return null
+          return null;
         }
-        return <p className="leading-8">{value?.children[0].text}</p>
+        return <p className="leading-8">{value?.children[0].text}</p>;
       },
     },
-  }
+  };
 
-  console.log(postData)
   return (
     <section className="flex justify-center   ">
       {/* Banner */}
@@ -147,8 +144,6 @@ const Post = async ({ params: { slug } }: Props) => {
                   month: "long",
                   year: "numeric",
                 })}
-
-                
               </span>
             </div>
             {/* <p className="line-clamp-1 text-sm text-white">
@@ -164,7 +159,9 @@ const Post = async ({ params: { slug } }: Props) => {
                 alt={postData.author.name}
               />
             </div>
-            <h2 className="font-semibold whitespace-nowrap leading-6">{postData.author.name}</h2>
+            <h2 className="font-semibold whitespace-nowrap leading-6">
+              {postData.author.name}
+            </h2>
             <div className="space-y-3">
               {postData.categories.map((item) => (
                 <button className="btn py-1 px-2 mr-2 flex-wrap" key={item._id}>

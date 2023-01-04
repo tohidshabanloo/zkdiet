@@ -11,10 +11,10 @@ import { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Banners } from "../typings";
+// import Swiper bundle with all modules installed
 
-// Import Swiper styles
-import "swiper/css";
 import "swiper/css/pagination";
+import "../styles/globals.css";
 
 // import required modules
 import { Pagination } from "swiper";
