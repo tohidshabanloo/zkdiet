@@ -12,7 +12,7 @@ export default function Alert({ preview }) {
       className="w-max-full py-2"
     >
       <Container>
-        <div className="flex rounded-xl justify-center dark:bg-gray-900 py-2 dark:text-gray-500 text-center text-sm">
+        <div className="flex rounded-xl p-4 justify-center bg-gray-200 text-gray-900 dark:bg-gray-900 py-2 dark:text-gray-500 text-center text-sm">
           <div></div>
           <div className="mt-1">
             {preview ? (
