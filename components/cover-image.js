@@ -10,14 +10,11 @@ export default function CoverImage({ title, slug, image: source, priority }) {
       })}
     >
       <Image
-        className="w-full h-auto"
-        layout="responsive"
+        className="w-full h-full md:h-48 xl:h-48  object-cover"
         width={2000}
         height={1000}
         alt={`Cover Image for ${title}`}
         src={source}
-        sizes="100vw"
-        priority={priority}
       />
     </div>
   ) : (
