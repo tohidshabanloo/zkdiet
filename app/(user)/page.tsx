@@ -41,15 +41,16 @@ const HomePage = async () => {
     <>
       <div>
         <main>
+          <div className="hidden sm:block">
+            <Categories categoriesData={categoriesData} />
+          </div>
           <Alert preview={undefined} />
           {/* <div className="">
             <BannerSlider bannerData={bannerData} />
           </div> */}
           <div className="m-4 border bg-gray-200 dark:bg-gray-800 px-3 py-2 rounded-md font-medium text-gray-900 dark:text-gray-200 ">
-          <Banner bannerData={bannerData[0]} />
-        </div>
-
-          <Categories categoriesData={categoriesData} />
+            <Banner bannerData={bannerData[0]} />
+          </div>
         </main>
         {/* Post */}
         <div className=" max-w-screen-lg gap-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-auto py-2 px-2">
