@@ -4,6 +4,7 @@ import Categories from "../../../../components/Categories";
 import Post from "../../../../components/Post";
 import { client } from "../../../../sanity";
 import { Posts } from "../../../../typings";
+import Alert from "../../../../components/alert";
 
 type Props = {
   params: {
@@ -48,7 +49,7 @@ const CategoryId = async ({ params: { categoryId } }: Props) => {
 
   return (
     <div>
-      {/* Banner */}
+      <Alert preview={undefined} />
       <div>
         <div className="m-4 border bg-gray-200 dark:bg-gray-800 px-3 py-2 rounded-md font-medium text-gray-900 dark:text-gray-200 ">
           <Banner bannerData={bannerData[0]} />
