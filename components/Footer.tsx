@@ -29,7 +29,7 @@ export default function Footer() {
                     👨
                   </span>{" "}
                   <a className="text-gray-500 hover:text-gray-600 transition">
-                    بیوگرافی
+                    درمورد ما
                   </a>
                 </Link>
                 <Link href="/destinations/">
@@ -37,7 +37,7 @@ export default function Footer() {
                     🌎
                   </span>{" "}
                   <a className="text-gray-500 hover:text-gray-600 transition">
-                    مقصد ها
+                    برنامه ها
                   </a>
                 </Link>
                 <Link href="/projects/">

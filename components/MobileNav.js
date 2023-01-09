@@ -85,7 +85,7 @@ const MobileNav = () => {
               onClick={onToggleNav}
             >
               <div className="text-lg   text-gray-900 dark:text-gray-100">
-                <span class="fi fi-nl"></span> راهنمای ویزای شنگن
+                <span class="fi fi-nl"></span> برنامه های یوگا  
               </div>
             </Link>
             <Link
@@ -94,10 +94,10 @@ const MobileNav = () => {
               onClick={onToggleNav}
             >
               <div className="text-lg  text-gray-900 dark:text-gray-100">
-                <span class="fi fi-eu"></span> کوچ سرفینگ
+                <span class="fi fi-eu"></span> مراکز یوگا 
               </div>
             </Link>
-            <Link
+            {/* <Link
               className="px-10 py-2 w-full hover:bg-gray-300 dark:hover:bg-gray-900 dark:bg-opacity-10"
               href="/visafree"
               onClick={onToggleNav}
@@ -105,7 +105,7 @@ const MobileNav = () => {
               <div className="text-lg  text-gray-900 dark:text-gray-100">
                 <span class="fi fi-ir"></span> کشورهای بدون ویزا
               </div>
-            </Link>
+            </Link> */}
             <Link
               className="px-10 py-2 w-full hover:bg-gray-300 dark:hover:bg-gray-900 dark:bg-opacity-10"
               href="/guest"
