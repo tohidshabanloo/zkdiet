@@ -23,7 +23,7 @@ export default function Intro({ title = "" }) {
       </h1>
       <h1 className=" text-2xl md:text-2xl font-bold tracking-tighter leading-tight md:pr-8"></h1>
       <h4 className="hidden lg:block bg-gray-200 dark:bg-gray-900 p-2 rounded-xl text-center md:text-left text-lg mt-2 ">
-        یوگا و فواید آن برای سلامت بدن و درمان بیماری ها
+        دایت و فواید آن برای سلامت بدن و درمان بیماری ها
       </h4>
     </section>
   );

@@ -85,7 +85,7 @@ const MobileNav = () => {
               onClick={onToggleNav}
             >
               <div className="text-lg   text-gray-900 dark:text-gray-100">
-                <span class="fi fi-nl"></span> برنامه های یوگا  
+                <span class="fi fi-nl"></span> برنامه های دایت
               </div>
             </Link>
             <Link
@@ -94,7 +94,7 @@ const MobileNav = () => {
               onClick={onToggleNav}
             >
               <div className="text-lg  text-gray-900 dark:text-gray-100">
-                <span class="fi fi-eu"></span> مراکز یوگا 
+                <span class="fi fi-eu"></span> مراکز دایت
               </div>
             </Link>
             {/* <Link

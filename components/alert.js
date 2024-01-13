@@ -28,7 +28,7 @@ export default function Alert({ preview }) {
               </>
             ) : (
               <>
-                خانه یوگا یک نسخه آزمایشی است | کاری از{" "}
+                خانه دایت یک نسخه آزمایشی است | کاری از{" "}
                 <a
                   target="_blank"
                   href={`https://www.tohidsh.com/`}
