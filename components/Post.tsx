@@ -17,7 +17,7 @@ const Post = ({ postData }: Props) => {
         <div className="bg-gray-200 dark:bg-gray-800  rounded-lg p-2 ">
           <div className="mb-5">
             <CoverImage
-              image={postData.mainImage?.url}
+              image={postData?.mainImage?.url}
               title={undefined}
               slug={undefined}
               priority={undefined}
