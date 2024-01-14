@@ -32,7 +32,13 @@ export default function HomeSlider({ bannerData }) {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src={bannerData.bannerImage.url} alt="" />
+          <img src={bannerData[0].bannerImage.url} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={bannerData[1].bannerImage.url} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={bannerData[2].bannerImage.url} alt="" />
         </SwiperSlide>
       </Swiper>
     </>
