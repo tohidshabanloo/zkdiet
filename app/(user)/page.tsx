@@ -10,6 +10,7 @@ import PreviewSuspense from "../../components/PreviewSuspense";
 import Categories from "../../components/Categories";
 import BannerSlider from "../../components/BannerSlider";
 import HomeSlider from "../../components/HomeSlider";
+import BmiCalculator from "../../components/BmiCalculator";
 
 const bannerQuery = groq`
 *[_type == "banner"]`;
@@ -60,6 +61,7 @@ const HomePage = async () => {
             <Post key={item._id} postData={item} />
           ))}
         </div>
+        <BmiCalculator />
       </div>
     </>
   );
