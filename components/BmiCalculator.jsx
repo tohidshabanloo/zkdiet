@@ -57,85 +57,120 @@ function App() {
     }
   };
   return (
-    <div className="container mx-auto mt-8">
-      <h1 className="text-4xl font-bold mb-4">خودتو اندازه کن</h1>
-      <h1 className="text-xl font-bold mb-4">
-        مشخصاتت رو وارد کن تا محاسبه بشه و ما کمکت می کنیم به وزن ایده آلت برسی
-        !
-      </h1>
-      <div className="flex space-x-4">
-        <div className="w-1/2">
-          <label
-            htmlFor="height"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Height (cm):
-          </label>
-          <input
-            type="number"
-            id="height"
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
-          />
-        </div>
-        <div className="w-1/2">
-          <label
-            htmlFor="weight"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Weight (kg):
-          </label>
-          <input
-            type="number"
-            id="weight"
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-            value={weight}
-            onChange={(e) => setWeight(e.target.value)}
-          />
-        </div>
-        <div className="mt-4">
-          <label
-            htmlFor="gender"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Gender:
-          </label>
-          <select
-            id="gender"
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-            value={gender}
-            onChange={(e) => setGender(e.target.value)}
-          >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-        </div>
-      </div>
-      <button
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md"
-        onClick={calculateBMI}
-      >
-        Calculate BMI
-      </button>
-      {bmi !== null && (
-        <div className="mt-4">
-          {bmi !== null && (
-            <div className="mt-4">
-              <p className="text-lg font-semibold">Your BMI: {bmi}</p>
-              <p className="text-gray-700 mt-2">
-                {getBMICategory(bmi)} - {getBMIRecommendation(bmi)}
-              </p>
-              <div className={`mt-4 ${getBMIColorClass(bmi)}`}>
-                <p className="text-lg font-semibold">
-                  BMI Category: {getBMICategory(bmi)}
-                </p>
+    <>
+      <div className="grid mx-auto mt-8">
+        <h1 className="text-4xl font-bold mb-4">خودتو اندازه کن</h1>
+        <h1 className="text-md font-bold mb-4">
+          مشخصاتت رو وارد کن تا محاسبه بشه و ما کمکت می کنیم به وزن ایده آلت
+          برسی !
+        </h1>
+        <div className="grid grid-cols-2 space-x-4">
+          <div className="grid-cols-2">
+            <div className="w-1/2 ">
+              <label
+                htmlFor="height"
+                className="block text-sm font-medium text-gray-700"
+              >
+                قد (سانتی متر):
+              </label>
+              <input
+                type="number"
+                id="height"
+                className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+                value={height}
+                onChange={(e) => setHeight(e.target.value)}
+              />
+            </div>
+            <div className="w-1/2">
+              <label
+                htmlFor="weight"
+                className="block text-sm font-medium text-gray-700"
+              >
+                وزن (کیلوگرم):
+              </label>
+              <input
+                type="number"
+                id="weight"
+                className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+                value={weight}
+                onChange={(e) => setWeight(e.target.value)}
+              />
+              <div className="mt-4">
+                <label
+                  htmlFor="gender"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  جنسیت:
+                </label>
+
+                <select
+                  id="gender"
+                  className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+                  value={gender}
+                  onChange={(e) => setGender(e.target.value)}
+                >
+                  <option value="male">مرد</option>
+                  <option value="female">زن</option>
+                </select>
               </div>
             </div>
-          )}
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            <div className="">
+              <img src="./images/man.png" className="w-full" />
+              <input
+                type="radio"
+                id="man"
+                name="drone"
+                value="male"
+                onClick={(e) => setGender(e.target.value)}
+                checked
+              />
+              <label for="male">من مرد هستم</label>
+            </div>
+
+            <div className="">
+              <img
+                src="./images/woman.png"
+                className="w-full"
+                onClick={(e) => setGender(e.target.value)}
+              />
+              <input
+                type="radio"
+                id="dewey"
+                name="drone"
+                value="female"
+                onClick={(e) => setGender(e.target.value)}
+              />
+              <label for="woman">من زن هستم</label>
+            </div>
+          </div>
         </div>
-      )}
-    </div>
+        <button
+          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md"
+          onClick={calculateBMI}
+        >
+          محاسبه کن
+        </button>
+        {bmi !== null && (
+          <div className="mt-4">
+            {bmi !== null && (
+              <div className="mt-4">
+                <p className="text-lg font-semibold">Your BMI: {bmi}</p>
+                <p className="text-gray-700 mt-2">
+                  {getBMICategory(bmi)} - {getBMIRecommendation(bmi)}
+                </p>
+                <div className={`mt-4 ${getBMIColorClass(bmi)}`}>
+                  <p className="text-lg font-semibold">
+                    BMI Category: {getBMICategory(bmi)}
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 
