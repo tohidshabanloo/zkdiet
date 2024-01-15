@@ -16,7 +16,8 @@ function App() {
     const heightInMeters = parseFloat(height) / 100;
     const weightInKg = parseFloat(weight);
     const genderFactor = gender === "male" ? 1 : 0.9;
-    const calculatedBMI = weightInKg / (heightInMeters * heightInMeters);
+    const calculatedBMI =
+      (weightInKg / (heightInMeters * heightInMeters)) * genderFactor;
     setBMI(calculatedBMI.toFixed(2));
   };
   // Helper functions
