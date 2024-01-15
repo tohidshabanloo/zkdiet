@@ -59,13 +59,13 @@ function App() {
   return (
     <>
       <div className="grid mx-auto mt-8">
-        <h1 className="text-4xl font-bold mb-4">خودتو اندازه کن</h1>
-        <h1 className="text-md font-bold mb-4">
-          مشخصاتت رو وارد کن تا محاسبه بشه و ما کمکت می کنیم به وزن ایده آلت
-          برسی !
-        </h1>
         <div className="grid grid-cols-2 space-x-4">
           <div className="grid-cols-2">
+            <h1 className="text-4xl font-bold mb-4">خودتو اندازه کن</h1>
+            <h1 className="text-md font-bold mb-4 w-3/4">
+              مشخصاتت رو وارد کن تا محاسبه بشه و ما کمکت می کنیم به وزن ایده آلت
+              برسی !
+            </h1>
             <div className="w-1/2 ">
               <label
                 htmlFor="height"
@@ -116,31 +116,34 @@ function App() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-2">
-            <div className="">
-              <img src="./images/man.png" className="w-full" />
+            <div>
+              <img
+                src="./images/man.png"
+                className="w-full mb-4"
+                id="RadioForMan"
+              />
               <input
                 type="radio"
-                id="man"
+                id="RadioForMan"
                 name="drone"
+                onChange={(e) => setGender(e.target.value)}
                 value="male"
-                onClick={(e) => setGender(e.target.value)}
-                checked
               />
               <label for="male">من مرد هستم</label>
             </div>
 
-            <div className="">
+            <div>
               <img
                 src="./images/woman.png"
-                className="w-full"
-                onClick={(e) => setGender(e.target.value)}
+                className="w-full mb-4"
+                id="RadioForWoman"
               />
               <input
                 type="radio"
-                id="dewey"
+                id="RadioForWoman"
                 name="drone"
+                onChange={(e) => setGender(e.target.value)}
                 value="female"
-                onClick={(e) => setGender(e.target.value)}
               />
               <label for="woman">من زن هستم</label>
             </div>
