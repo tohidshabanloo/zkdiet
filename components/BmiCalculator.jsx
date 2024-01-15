@@ -24,25 +24,25 @@ function App() {
 
   const getBMICategory = (bmi) => {
     if (bmi < 18.5) {
-      return "Underweight";
+      return "کمبود وزن";
     } else if (bmi >= 18.5 && bmi < 24.9) {
-      return "Normal Weight";
+      return "وزن نرمال";
     } else if (bmi >= 25 && bmi < 29.9) {
-      return "Overweight";
+      return "اضافه وزن";
     } else {
-      return "Obese";
+      return "چاق";
     }
   };
 
   const getBMIRecommendation = (bmi) => {
     if (bmi < 18.5) {
-      return "You may want to gain some weight.";
+      return "ممکن است بخواهید کمی وزن اضافه کنید.";
     } else if (bmi >= 18.5 && bmi < 24.9) {
-      return "You are in a healthy weight range. Keep it up!";
+      return "شما در محدوده وزنی سالم هستید. ادامه بده!";
     } else if (bmi >= 25 && bmi < 29.9) {
-      return "You may want to lose some weight for health benefits.";
+      return "ممکن است بخواهید برای سلامتی مقداری وزن کم کنید.";
     } else {
-      return "You may be at risk for health problems. Consider consulting a healthcare professional.";
+      return "ممکن است در معرض خطر مشکلات سلامتی باشید. مشورت با یک متخصص مراقبت های بهداشتی را در نظر بگیرید.";
     }
   };
 
