@@ -38,7 +38,7 @@ export default function HomeSlider({ bannerData }) {
           <img src={bannerData[1].bannerImage.url} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={bannerData[2].bannerImage.url} alt="" />
+          <img src={bannerData[3].bannerImage.url} alt="" />
         </SwiperSlide>
       </Swiper>
     </>

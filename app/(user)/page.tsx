@@ -52,7 +52,7 @@ const HomePage = async () => {
           </div> */}
           <HomeSlider bannerData={bannerData} />
           <div className="m-4 border bg-gray-200 dark:bg-gray-800 px-3 py-2 rounded-md font-medium text-gray-900 dark:text-gray-200 ">
-            <Banner bannerData={bannerData[0]} />
+            <Banner bannerData={bannerData[2]} />
           </div>
         </main>
         {/* Post */}
