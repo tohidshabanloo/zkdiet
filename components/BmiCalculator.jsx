@@ -24,25 +24,50 @@ function App() {
 
   const getBMICategory = (bmi) => {
     if (bmi < 18.5) {
-      return "کمبود وزن";
+      return <p className="text-gray-900 dark:text-gray-200">"وزنت کمه"</p>;
     } else if (bmi >= 18.5 && bmi < 24.9) {
-      return "وزن نرمال";
+      return (
+        <p className="text-gray-900 dark:text-gray-200">
+          "وزنت نرماله نگران چیزی نباش"
+        </p>
+      );
     } else if (bmi >= 25 && bmi < 29.9) {
-      return "اضافه وزن";
+      return (
+        <p className="text-gray-900 dark:text-gray-200">"وزنت زیاده عزیزم"</p>
+      );
     } else {
-      return "چاق";
+      return (
+        <p className="text-gray-900 dark:text-gray-200">"خیلی چاقی عزیزم"</p>
+      );
     }
   };
 
   const getBMIRecommendation = (bmi) => {
     if (bmi < 18.5) {
-      return "ممکن است بخواهید کمی وزن اضافه کنید.";
+      return (
+        <p className="text-gray-900 dark:text-gray-200">
+          "باید یکمی وزن اضافه کنی"
+        </p>
+      );
     } else if (bmi >= 18.5 && bmi < 24.9) {
-      return "شما در محدوده وزنی سالم هستید. ادامه بده!";
+      return (
+        <p className="text-gray-900 dark:text-gray-200">
+          تو محدوده وزنی سالم هستی؛ همینو ادامه بده
+        </p>
+      );
     } else if (bmi >= 25 && bmi < 29.9) {
-      return "ممکن است بخواهید برای سلامتی مقداری وزن کم کنید.";
+      return (
+        <p className="text-gray-900 dark:text-gray-200">
+          واسه سلامتیت باید وزن کم کنی
+        </p>
+      );
     } else {
-      return "ممکن است در معرض خطر مشکلات سلامتی باشید. مشورت با یک متخصص مراقبت های بهداشتی را در نظر بگیرید.";
+      return (
+        <p className="text-gray-900 dark:text-gray-200">
+          ممکنه که تو در معرض خطر مشکلات سلامتی باشی؛ مشورت با یه متخصص تغذیه
+          میتونه بهت کمک کنه؛ با ما تماس بگیر 02144809654
+        </p>
+      );
     }
   };
 
@@ -58,7 +83,7 @@ function App() {
     }
   };
   return (
-    <div className="px-4 bg-gray-200 dark:bg-gray-800 p-4 rounded-lg ">
+    <div className="px-4 bg-gray-200 dark:bg-gray-800 p-4 rounded-lg  ">
       <div className="grid mx-auto mt-8">
         <div className="grid grid-cols-2 space-x-4">
           <div className="grid-cols-2">
@@ -160,13 +185,16 @@ function App() {
           <div className="mt-4">
             {bmi !== null && (
               <div className="mt-4">
-                <p className="text-lg font-semibold">Your BMI: {bmi}</p>
+                <p className="text-lg font-semibold">
+                  شاخص توده بدنی شما: {bmi}
+                </p>
                 <p className="text-gray-700 mt-2">
-                  {getBMICategory(bmi)} - {getBMIRecommendation(bmi)}
+                  {/* {getBMICategory(bmi)} - {getBMIRecommendation(bmi)} */}
+                  {getBMIRecommendation(bmi)}
                 </p>
                 <div className={`mt-4 ${getBMIColorClass(bmi)}`}>
                   <p className="text-lg font-semibold">
-                    BMI Category: {getBMICategory(bmi)}
+                    وضعیت: {getBMICategory(bmi)}
                   </p>
                 </div>
               </div>
