@@ -58,7 +58,7 @@ function App() {
     }
   };
   return (
-    <>
+    <div className="px-4 bg-gray-200 dark:bg-gray-800 p-4 rounded-lg ">
       <div className="grid mx-auto mt-8">
         <div className="grid grid-cols-2 space-x-4">
           <div className="grid-cols-2">
@@ -70,7 +70,7 @@ function App() {
             <div className="w-1/2 ">
               <label
                 htmlFor="height"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-900 dark:text-gray-200"
               >
                 قد (سانتی متر):
               </label>
@@ -82,10 +82,10 @@ function App() {
                 onChange={(e) => setHeight(e.target.value)}
               />
             </div>
-            <div className="w-1/2">
+            <div className="w-1/2 mt-4">
               <label
                 htmlFor="weight"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-900 dark:text-gray-200"
               >
                 وزن (کیلوگرم):
               </label>
@@ -99,7 +99,7 @@ function App() {
               <div className="mt-4">
                 <label
                   htmlFor="gender"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-gray-900 dark:text-gray-200"
                 >
                   جنسیت:
                 </label>
@@ -174,7 +174,7 @@ function App() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 
