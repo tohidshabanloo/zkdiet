@@ -1,13 +1,13 @@
 import blockContent from "./blockContent";
 import category from "./category";
-import authorphoto from "./authorphoto";
+import authorphoto from "./AuthorBanner";
 import post from "./post";
-import author from "./author";
+import AuthorBanner from "./author";
 import banner from "./banner";
 
 export const schemaTypes = [
   post,
-  author,
+  AuthorBanner,
   category,
   blockContent,
   banner,

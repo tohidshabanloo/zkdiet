@@ -16,7 +16,7 @@ import Author from "../../components/Author";
 const bannerQuery = groq`
 *[_type == "banner"]`;
 const authorQuery = groq`
-*[_type == "author"]`;
+*[_type == "authorBanner"]`;
 const categoriesQuery = groq`
 *[_type == "category"]`;
 const postQuery = groq`
@@ -30,7 +30,7 @@ export const revalidate = 30; //Revalidate the page after 30sec
 
 const HomePage = async () => {
   const bannerData: any = await client.fetch(bannerQuery);
-  const authorData: any = await client.fetch(bannerQuery);
+  const authorData: any = await client.fetch(authorQuery);
   const postData: any = await client.fetch(postQuery);
   const categoriesData: any = await client.fetch(categoriesQuery);
 

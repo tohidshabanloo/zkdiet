@@ -1,5 +1,5 @@
 import React from "react";
-import { AuthorImage } from "../typings";
+import { AuthorBanner } from "../typings";
 
 const Author = ({ authorData }) => {
   return (
