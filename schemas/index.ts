@@ -3,7 +3,7 @@ import category from "./category";
 import post from "./post";
 import author from "./author";
 import banner from "./banner";
-import authorBanner from "./authorBanner";
+import authorBannerInfo from "./authorBannerInfo";
 
 export const schemaTypes = [
   post,
@@ -11,5 +11,5 @@ export const schemaTypes = [
   category,
   blockContent,
   banner,
-  authorBanner,
+  authorBannerInfo,
 ];
