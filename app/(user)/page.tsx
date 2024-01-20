@@ -11,6 +11,7 @@ import Categories from "../../components/Categories";
 import BannerSlider from "../../components/BannerSlider";
 import HomeSlider from "../../components/HomeSlider";
 import BmiCalculator from "../../components/BmiCalculator";
+import Author from "../../components/Author";
 
 const bannerQuery = groq`
 *[_type == "banner"]`;
@@ -59,12 +60,12 @@ const HomePage = async () => {
           </div>
         </main>
         {/* Post */}
-        <div className="mb-4 max-w-screen-lg gap-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-auto py-2 px-2">
+        <div className="mb-2 max-w-screen-lg gap-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-auto py-2 px-2">
           {postData.map((item: any) => (
             <Post key={item._id} postData={item} />
           ))}
         </div>
-
+        <Author />
         <BmiCalculator />
       </div>
     </>
