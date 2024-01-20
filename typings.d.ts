@@ -15,14 +15,13 @@ export interface Banners extends Base {
   header2: string;
   hedaer1: string;
   bannerImage: Image;
-  
 }
 export interface AuthorImage extends Base {
   description: string;
+  name: string;
   [x: string]: any;
   body: Block[];
   authorImage: Image;
-  
 }
 export interface Posts extends Base {
   [x: string]: any;
