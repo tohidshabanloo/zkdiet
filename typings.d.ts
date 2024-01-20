@@ -18,10 +18,10 @@ export interface Banners extends Base {
 }
 export interface AuthorImage extends Base {
   description: string;
-  name: string;
   [x: string]: any;
-  body: Block[];
+  name: string;
   authorImage: Image;
+  body: Block[];
 }
 export interface Posts extends Base {
   [x: string]: any;
