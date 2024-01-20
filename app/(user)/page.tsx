@@ -61,7 +61,6 @@ const HomePage = async () => {
           <div className="m-4 border bg-gray-200 dark:bg-gray-800 px-3 py-2 rounded-md font-medium text-gray-900 dark:text-gray-200 ">
             <Banner bannerData={bannerData[2]} />
           </div>
-          <p>{authorData[0].name}</p>
         </main>
         {/* Post */}
         <div className="mb-2 max-w-screen-lg gap-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-auto py-2 px-2">
