@@ -5,7 +5,7 @@ type Props = {
   authorData: AuthorBanner;
 };
 
-const Author = ({ authorData }) => {
+const Author = ({ authorData }: Props) => {
   return (
     <div className="flex flex-col items-center justify-center px-4 bg-gray-200 dark:bg-gray-800 p-4 rounded-lg mb-4">
       <div className="max-w-4xl mx-auto">
