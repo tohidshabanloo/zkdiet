@@ -6,6 +6,11 @@ export default defineType({
   type: "document",
   fields: [
     defineField({
+      name: "title",
+      title: "اسم نویسنده",
+      type: "string",
+    }),
+    defineField({
       name: "description",
       title: "توضیحات",
       type: "string",
