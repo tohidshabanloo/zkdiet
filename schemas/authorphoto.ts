@@ -1,7 +1,7 @@
 import { defineField, defineType } from "sanity";
 
 export default defineType({
-  name: "banner",
+  name: "authorimage",
   title: "بنر",
   type: "document",
   fields: [
