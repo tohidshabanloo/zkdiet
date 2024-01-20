@@ -10,7 +10,7 @@ type Props = {
 
 const Banner = ({ bannerData }: Props) => {
   return (
-    <section className="  gap-4 grid lg:grid-cols-6 md:grid-cols-6 space-y-5 p-2 md:p-4">
+    <section className="gap-4 grid lg:grid-cols-6 md:grid-cols-6 space-y-5 p-2 md:p-4">
       {/* Right */}
       <div className="space-y-4 col-span-3 md:col-span-3 lg:mt-4 md:mt-4">
         <h1 className="text-3xl lg:text-2xl md:text-lg font-bold">

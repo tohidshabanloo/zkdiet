@@ -17,9 +17,9 @@ export interface Banners extends Base {
   bannerImage: Image;
 }
 export interface AuthorBanner extends Base {
-  description: string;
   [x: string]: any;
   name: string;
+  description: string;
   authorImage: Image;
   body: Block[];
 }
