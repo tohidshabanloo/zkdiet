@@ -1,6 +1,10 @@
 import React from "react";
 import { AuthorBanner } from "../typings";
 
+type Props = {
+  authorData: AuthorBanner;
+};
+
 const Author = ({ authorData }) => {
   return (
     <div className="flex flex-col items-center justify-center px-4 bg-gray-200 dark:bg-gray-800 p-4 rounded-lg mb-4">
