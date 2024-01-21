@@ -1,9 +1,4 @@
 import React from "react";
-import { AuthorBanner } from "../typings";
-
-type Props = {
-  authorData: AuthorBanner;
-};
 
 const Author = ({ authorData }: Props) => {
   return (

@@ -16,13 +16,7 @@ export interface Banners extends Base {
   hedaer1: string;
   bannerImage: Image;
 }
-export interface AuthorBanner extends Base {
-  [x: string]: any;
-  name: string;
-  description: string;
-  authorImage: Image;
-  body: Block[];
-}
+
 export interface Posts extends Base {
   [x: string]: any;
   author: Author;
