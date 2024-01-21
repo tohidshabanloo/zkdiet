@@ -7,7 +7,7 @@ type Props = {
 };
 const About = ({ aboutData }: Props) => {
   return (
-    <div className="flex flex-col items-center justify-center px-4 bg-gray-200 dark:bg-gray-800 p-4 rounded-lg mb-4">
+    <div className="flex flex-col items-center justify-center px-4  p-4 rounded-lg mb-4">
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/3 p-2">
