@@ -19,7 +19,7 @@
     "sanity": "^3.0.0",
     "sanity-plugin-cloudinary": "^1.0.1",
     "styled-components": "^5.2.0",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.7"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^2.0.1",

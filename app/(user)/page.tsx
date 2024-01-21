@@ -12,6 +12,7 @@ import BannerSlider from "../../components/BannerSlider";
 import HomeSlider from "../../components/HomeSlider";
 import BmiCalculator from "../../components/BmiCalculator";
 import About from "../../components/About";
+import VideoSlider from "../../components/VideoSlider";
 
 const bannerQuery = groq`
 *[_type == "banner"]`;
@@ -27,7 +28,21 @@ const postQuery = groq`
 } | order(_createdAt desc)`;
 
 export const revalidate = 30; //Revalidate the page after 30sec
-
+const videos = [
+  {
+    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/v1705859837/videos/video1_apm0rl.mp4",
+  },
+  {
+    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/v1705859837/videos/video1_apm0rl.mp4",
+  },
+  {
+    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/v1705859837/videos/video1_apm0rl.mp4",
+  },
+  {
+    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/v1705859837/videos/video1_apm0rl.mp4",
+  },
+  // Add more video objects as needed
+];
 const HomePage = async () => {
   const bannerData: any = await client.fetch(bannerQuery);
   const aboutData: any = await client.fetch(aboutQuery);
@@ -70,6 +85,7 @@ const HomePage = async () => {
         </div>
         <About aboutData={aboutData[0]} />
         <BmiCalculator />
+        <VideoSlider videos={videos} />
       </div>
     </>
   );
