@@ -11,14 +11,14 @@ const About = ({ aboutData }: Props) => {
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/3 p-2">
-            <div className="w-full h-auto rounded-lg">
+            {/* <div className="w-full h-auto rounded-lg">
               <CoverImage
                 image={aboutData.bannerImage.url}
                 title={undefined}
                 slug={undefined}
                 priority={undefined}
               />
-            </div>
+            </div> */}
           </div>
           <div className="md:w-2/3 p-4">
             <h1 className="text-3xl font-bold mb-4">{aboutData[0].hedaer1}</h1>
