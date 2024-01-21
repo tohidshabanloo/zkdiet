@@ -5,7 +5,6 @@ import "swiper/swiper-bundle.css";
 
 const VideoSlider = ({ videos }) => {
   const swiperParams = {
-    slidesPerView: 3.5,
     spaceBetween: 20,
     autoplay: {
       delay: 5000,
