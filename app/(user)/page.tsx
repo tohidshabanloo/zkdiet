@@ -68,7 +68,7 @@ const HomePage = async () => {
             <Post key={item._id} postData={item} />
           ))}
         </div>
-        <About aboutData={aboutData} />
+        <About aboutData={aboutData[0]} />
         <BmiCalculator />
       </div>
     </>
