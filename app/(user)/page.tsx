@@ -11,12 +11,12 @@ import Categories from "../../components/Categories";
 import BannerSlider from "../../components/BannerSlider";
 import HomeSlider from "../../components/HomeSlider";
 import BmiCalculator from "../../components/BmiCalculator";
-import Author from "../../components/Author";
+import About from "../../components/About";
 
 const bannerQuery = groq`
 *[_type == "banner"]`;
-const authorQuery = groq`
-*[_type == "authorBanner"]`;
+const aboutQuery = groq`
+*[_type == "about"]`;
 const categoriesQuery = groq`
 *[_type == "category"]`;
 const postQuery = groq`
@@ -30,7 +30,7 @@ export const revalidate = 30; //Revalidate the page after 30sec
 
 const HomePage = async () => {
   const bannerData: any = await client.fetch(bannerQuery);
-  const authorData: any = await client.fetch(authorQuery);
+  const aboutData: any = await client.fetch(aboutQuery);
   const postData: any = await client.fetch(postQuery);
   const categoriesData: any = await client.fetch(categoriesQuery);
 
@@ -68,7 +68,7 @@ const HomePage = async () => {
             <Post key={item._id} postData={item} />
           ))}
         </div>
-        <Author authorData={authorData} />
+        <About aboutData={aboutData} />
         <BmiCalculator />
       </div>
     </>
