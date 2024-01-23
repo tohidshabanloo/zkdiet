@@ -14,8 +14,11 @@ const VideoSlider = ({ videos }) => {
       prevEl: ".swiper-button-prev",
     },
     breakpoints: {
+      400: {
+        slidesPerView: 1.2, // Show 1 slide per view on screens smaller than 768px (e.g., mobile)
+      },
       768: {
-        slidesPerView: 1.5, // Show 1 slide per view on screens smaller than 768px (e.g., mobile)
+        slidesPerView: 2.2, // Show 1 slide per view on screens smaller than 768px (e.g., mobile)
       },
       992: {
         slidesPerView: 2.5, // Show 2 slides per view on screens between 768px and 992px
