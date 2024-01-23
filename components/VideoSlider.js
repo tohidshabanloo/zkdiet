@@ -40,11 +40,11 @@ const VideoSlider = ({ videos }) => {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-20">
       <div className={styles.videoSliderContainer}>
         <img
           className={styles.instagramFrame}
-          src="/images/instagram-frame.png"
+          src="/images/instagram-frame2.png"
           alt="Instagram Frame"
         />
         <Swiper {...swiperParams}>
