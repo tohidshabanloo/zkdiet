@@ -1,10 +1,18 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
+import styles from "./VideoSlider.module.css";
 
 const VideoSlider = ({ videos }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleSlideChange = (swiper) => {
+    setActiveIndex(swiper.activeIndex);
+  };
+
   const swiperParams = {
+    centeredSlides: true,
     spaceBetween: 20,
     autoplay: {
       delay: 5000,
@@ -13,6 +21,8 @@ const VideoSlider = ({ videos }) => {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+
+    onSlideChange: handleSlideChange,
     breakpoints: {
       400: {
         slidesPerView: 1.2, // Show 1 slide per view on screens smaller than 768px (e.g., mobile)
@@ -31,18 +41,31 @@ const VideoSlider = ({ videos }) => {
 
   return (
     <div className="p-8">
-      <Swiper {...swiperParams}>
-        {videos.map((video, index) => (
-          <SwiperSlide key={index}>
-            <video controls width="100%">
-              <source src={video.src} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </SwiperSlide>
-        ))}
-        <div className="swiper-button-next"></div>
-        <div className="swiper-button-prev"></div>
-      </Swiper>
+      <div className={styles.videoSliderContainer}>
+        <img
+          className={styles.instagramFrame}
+          src="/images/instagram-frame.png"
+          alt="Instagram Frame"
+        />
+        <Swiper {...swiperParams}>
+          {videos.map((video, index) => (
+            <SwiperSlide key={index}>
+              <div
+                className={`${styles.videoWrapper} ${
+                  activeIndex === index ? styles.active : ""
+                }`}
+              >
+                <video controls width="100%">
+                  <source src={video.src} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </SwiperSlide>
+          ))}
+          <div className="swiper-button-next"></div>
+          <div className="swiper-button-prev"></div>
+        </Swiper>
+      </div>
     </div>
   );
 };

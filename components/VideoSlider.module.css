@@ -1,0 +1,28 @@
+/* VideoSlider.module.css */
+.videoSliderContainer {
+  position: relative;
+}
+
+.instagramFrame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 50%;
+  object-fit: cover;
+  z-index: -1; /* Ensure the frame is behind the videos */
+}
+
+.swiper-container {
+  position: relative;
+  z-index: 1; /* Ensure the videos are above the frame */
+}
+.videoWrapper {
+  opacity: 0.2; /* Initial opacity for non-active videos */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.videoWrapper.active {
+  opacity: 1; /* Full opacity for the active video */
+}

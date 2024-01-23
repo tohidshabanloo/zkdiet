@@ -566,3 +566,14 @@ ol {
   border-radius: 0%;
   border: 0px solid black;
 }
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Add the following rule */
+.videoSliderContainer {
+  position: relative;
+  overflow: hidden;
+}
