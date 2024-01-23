@@ -9,21 +9,23 @@ export default defineType({
       name: "hedaer1",
       title: "بنر اول",
       type: "string",
+      validation: (Rule) =>
+        Rule.required().error("پر کردن این قسمت اجباری است"),
     }),
-    defineField({
-      name: "header2",
-      title: "بنر دوم",
-      type: "string",
-    }),
+
     defineField({
       name: "description",
       title: "توضیحات",
-      type: "string",
+      type: "blockContent",
+      validation: (Rule) =>
+        Rule.required().error("پر کردن این قسمت اجباری است"),
     }),
     defineField({
       name: "bannerImage",
       title: "عکس بنر",
       type: "cloudinary.asset",
+      validation: (Rule) =>
+        Rule.required().error("پر کردن این قسمت اجباری است"),
       description: "This asset is served from Cloudinary",
       options: {
         hotspot: true,
