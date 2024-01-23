@@ -20,7 +20,7 @@ export interface Banners extends Base {
 export interface About extends Base {
   [x: string]: any;
   body: Block[];
-  description: Block[];
+  description: string;
   hedaer1: string;
   bannerImage: Image;
 }

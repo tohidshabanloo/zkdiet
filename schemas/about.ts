@@ -16,7 +16,7 @@ export default defineType({
     defineField({
       name: "description",
       title: "توضیحات",
-      type: "blockContent",
+      type: "string",
       validation: (Rule) =>
         Rule.required().error("پر کردن این قسمت اجباری است"),
     }),
