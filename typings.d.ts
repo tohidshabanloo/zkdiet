@@ -18,10 +18,9 @@ export interface Banners extends Base {
 }
 
 export interface About extends Base {
-  description: string;
   [x: string]: any;
   body: Block[];
-  header2: string;
+  description: Block[];
   hedaer1: string;
   bannerImage: Image;
 }
