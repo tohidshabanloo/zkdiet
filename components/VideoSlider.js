@@ -44,13 +44,40 @@ const VideoSlider = ({ videos }) => {
       <div className="w-full max-w-5xl p-4 rounded-lg shadow-md ">
         <div>
           <div className="flex justify-center">
-            <div className="w-full md:w-1/3 lg:w-1/3  items-center bg-gray-600 ">
-              <img
-                src="https://source.unsplash.com/random"
-                alt="Profile"
-                className="w-10 h-10 rounded-full mr-4"
-              />
-              <h1 className="text-xl font-bold ">Username</h1>
+            <div className="w-full md:w-1/3 lg:w-1/3  items-center bg-gray-100 ">
+              <div className="flex justify-between mt-2">
+                <img
+                  src="./images/instagram/instagram3.png"
+                  className="w-7 h-7 rounded-full mr-4"
+                />
+                <img
+                  src="./images/instagram/instagram2.png"
+                  className="w-12 h-15"
+                />
+                <img
+                  src="./images/instagram/instagram1.png"
+                  className="w-7 h-7 rounded-full ml-4"
+                />
+              </div>
+              <hr className="ml-2 mt-2 border-gray-300 sm:mx-auto " />
+              <div className="flex justify-between mt-1">
+                <div className="mt-1 mr-2">
+                  <img
+                    src="./images/instagram/instagram5.png"
+                    className="w-7 h-7 rounded-full ml-4"
+                  />
+                </div>
+                <div className="flex flex-row-reverse">
+                  <img
+                    src="./images/instagram/instagram4.png"
+                    alt="Profile"
+                    className="w-10 h-10 rounded-full ml-2"
+                  />
+                  <h1 className="text-md mt-2 ml-1 text-black font-bold ">
+                    zk_diet_
+                  </h1>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -74,16 +101,18 @@ const VideoSlider = ({ videos }) => {
               <div className="swiper-button-prev"></div>
             </Swiper>
             <div className="flex justify-center">
-              <div className="w-full md:w-1/3 lg:w-1/3 flex p-4 bg-gray-600">
+              <div className="w-full md:w-1/3 lg:w-1/3 flex p-4 bg-gray-100 ">
                 <div className="flex items-center  mb-2">
                   <img
                     src="https://source.unsplash.com/random"
                     alt="Profile"
                     className="w-8 h-8 rounded-full mr-2"
                   />
-                  <h2 className="text-lg font-semibold">Username payin</h2>
+                  <h2 className="text-lg text-black font-semibold">
+                    Username payin
+                  </h2>
                 </div>
-                <p className="text-sm">Caption payin</p>
+                <p className="text-sm text-black">Caption payin</p>
               </div>
             </div>
           </div>
