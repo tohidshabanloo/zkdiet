@@ -67,16 +67,21 @@ const VideoSlider = ({ videos }) => {
                     className="w-7 h-7 rounded-full ml-4"
                   />
                 </div>
-                <div className="flex flex-row-reverse">
+                <a
+                  className="flex flex-row-reverse"
+                  href="https://www.instagram.com/zk_diet_"
+                  target="_blank"
+                >
                   <img
                     src="./images/instagram/instagram4.png"
                     alt="Profile"
                     className="w-10 h-10 rounded-full ml-2"
                   />
+
                   <h1 className="text-md mt-2 ml-1 text-black font-bold ">
                     zk_diet_
                   </h1>
-                </div>
+                </a>
               </div>
             </div>
           </div>
