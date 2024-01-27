@@ -30,16 +30,16 @@ const postQuery = groq`
 export const revalidate = 30; //Revalidate the page after 30sec
 const videos = [
   {
-    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/v1705859837/videos/video1_apm0rl.mp4",
+    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/c_crop,h_980,w_720/v1705859837/videos/video1_apm0rl.mp4",
   },
   {
-    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/v1705861592/videos/video2_ytmxmf.mp4",
+    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/c_crop,h_980,w_720/v1705861592/videos/video2_ytmxmf.mp4",
   },
   {
-    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/v1705861697/videos/video3_pgwfgx.mp4",
+    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/c_crop,h_980,w_720/v1705861697/videos/video3_pgwfgx.mp4",
   },
   {
-    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/v1705861761/videos/video4_wrdgpz.mp4",
+    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/c_crop,h_980,w_720/v1705861761/videos/video4_wrdgpz.mp4",
   },
   // Add more video objects as needed
 ];
