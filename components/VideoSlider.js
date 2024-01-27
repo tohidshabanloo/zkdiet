@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import styles from "./VideoSlider.module.css";
-
+import SwiperCore, { Navigation } from "swiper";
+SwiperCore.use([Navigation]);
 const VideoSlider = ({ videos }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -17,11 +18,8 @@ const VideoSlider = ({ videos }) => {
     // autoplay: {
     //   delay: 5000,
     // },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
 
+    navigation: true, // Enable navigation
     onSlideChange: handleSlideChange,
     breakpoints: {
       400: {
@@ -113,7 +111,7 @@ const VideoSlider = ({ videos }) => {
             </div>
           </div>
 
-          <div className="">
+          <div className={styles.videoSliderContainer}>
             <Swiper {...swiperParams}>
               {videos.map((video, index) => (
                 <SwiperSlide key={index}>
@@ -129,8 +127,8 @@ const VideoSlider = ({ videos }) => {
                   </div>
                 </SwiperSlide>
               ))}
-              <div className="swiper-button-next"></div>
-              <div className="swiper-button-prev"></div>
+              {/* <div className="swiper-button-next"></div>
+              <div className="swiper-button-prev"></div> */}
             </Swiper>
             <div className="flex justify-center">
               <div className="w-full md:w-1/3 lg:w-1/3 flex bg-gray-100 ">
@@ -139,17 +137,6 @@ const VideoSlider = ({ videos }) => {
                   alt="Profile"
                   className=""
                 />
-                {/* <div className="flex items-center  mb-2">
-                  <img
-                    src="https://source.unsplash.com/random"
-                    alt="Profile"
-                    className="w-8 h-8 rounded-full mr-2"
-                  />
-                  <h2 className="text-lg text-black font-semibold">
-                    Username payin
-                  </h2>
-                </div>
-                <p className="text-sm text-black">Caption payin</p> */}
               </div>
             </div>
           </div>
