@@ -120,7 +120,7 @@ const VideoSlider = ({ videos }) => {
                       activeIndex === index ? styles.active : ""
                     }`}
                   >
-                    <video controls={true} width="100%">
+                    <video controls={true} width="100%" poster={video.poster}>
                       <source src={video.src} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
