@@ -1,11 +1,16 @@
 .videoWrapper {
   opacity: 0.2; /* Initial opacity for non-active videos */
   transition: opacity 0.3s ease-in-out;
+  filter: blur(2px);
   overflow: hidden;
   pointer-events: none;
+  /* scale: 0.9; */
 }
 
 .videoWrapper.active {
   opacity: 1; /* Full opacity for the active video */
   pointer-events: auto;
+  filter: blur(0px);
+  position: relative;
+  /* scale: 1; */
 }

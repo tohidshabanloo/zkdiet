@@ -22,6 +22,7 @@ const VideoSlider = ({ videos }) => {
 
     navigation: true, // Enable navigation
     onSlideChange: handleSlideChange,
+    initialSlide: 1,
     breakpoints: {
       400: {
         slidesPerView: 1, // Show 1 slide per view on screens smaller than 768px (e.g., mobile)
@@ -40,7 +41,7 @@ const VideoSlider = ({ videos }) => {
 
   return (
     <div className="flex items-center justify-center ">
-      <div className="w-full max-w-5xl p-4 rounded-lg shadow-md ">
+      <div className="w-full max-w-5xl p-4  ">
         <div>
           <div className="flex justify-center">
             <div className="w-full md:w-1/3 lg:w-1/3 bg-gray-100 ">
