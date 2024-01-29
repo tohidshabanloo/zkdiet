@@ -4,6 +4,7 @@ import post from "./post";
 import author from "./author";
 import banner from "./banner";
 import about from "./about";
+import video from "./video";
 
 export const schemaTypes = [
   post,
@@ -12,4 +13,5 @@ export const schemaTypes = [
   blockContent,
   banner,
   about,
+  video,
 ];

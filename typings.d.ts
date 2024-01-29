@@ -17,6 +17,13 @@ export interface Banners extends Base {
   bannerImage: Image;
 }
 
+export interface Video extends Base {
+  [x: string]: any;
+  title: string;
+  file: string;
+  poster: Image;
+}
+
 export interface About extends Base {
   [x: string]: any;
   body: Block[];

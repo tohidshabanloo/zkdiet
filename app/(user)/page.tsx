@@ -16,6 +16,8 @@ import VideoSlider from "../../components/VideoSlider";
 
 const bannerQuery = groq`
 *[_type == "banner"]`;
+const videoQuery = groq`
+*[_type == "video"]`;
 const aboutQuery = groq`
 *[_type == "about"]`;
 const categoriesQuery = groq`
@@ -28,25 +30,26 @@ const postQuery = groq`
 } | order(_createdAt desc)`;
 
 export const revalidate = 30; //Revalidate the page after 30sec
-const videos = [
-  {
-    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/c_crop,h_980,w_720/v1705859837/videos/video1_apm0rl.mp4",
-    poster:
-      "https://res.cloudinary.com/dyr2k1f8a/image/upload/v1705827860/Zkdiet/zk_heeg7y.png",
-  },
-  {
-    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/c_crop,h_980,w_720/v1705861592/videos/video2_ytmxmf.mp4",
-  },
-  {
-    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/c_crop,h_980,w_720/v1705861697/videos/video3_pgwfgx.mp4",
-  },
-  {
-    src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/c_crop,h_980,w_720/v1705861761/videos/video4_wrdgpz.mp4",
-  },
-  // Add more video objects as needed
-];
+// const videos = [
+//   {
+//     src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/c_crop,h_980,w_720/v1705859837/videos/video1_apm0rl.mp4",
+//     poster:
+//       "https://res.cloudinary.com/dyr2k1f8a/image/upload/v1705827860/Zkdiet/zk_heeg7y.png",
+//   },
+//   {
+//     src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/c_crop,h_980,w_720/v1705861592/videos/video2_ytmxmf.mp4",
+//   },
+//   {
+//     src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/c_crop,h_980,w_720/v1705861697/videos/video3_pgwfgx.mp4",
+//   },
+//   {
+//     src: "https://res.cloudinary.com/dyr2k1f8a/video/upload/c_crop,h_980,w_720/v1705861761/videos/video4_wrdgpz.mp4",
+//   },
+//   // Add more video objects as needed
+// ];
 const HomePage = async () => {
   const bannerData: any = await client.fetch(bannerQuery);
+  const videoData: any = await client.fetch(videoQuery);
   const aboutData: any = await client.fetch(aboutQuery);
   const postData: any = await client.fetch(postQuery);
   const categoriesData: any = await client.fetch(categoriesQuery);
@@ -87,7 +90,7 @@ const HomePage = async () => {
         </div>
         <About aboutData={aboutData[0]} />
         <BmiCalculator />
-        <VideoSlider videos={videos} />
+        <VideoSlider videos={videoData} />
       </div>
     </>
   );

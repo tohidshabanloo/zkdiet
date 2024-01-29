@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import styles from "./VideoSlider.module.css";
 import SwiperCore, { Navigation } from "swiper";
+import CoverImage from "./cover-image";
 SwiperCore.use([Navigation]);
 const VideoSlider = ({ videos }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -120,8 +121,12 @@ const VideoSlider = ({ videos }) => {
                       activeIndex === index ? styles.active : ""
                     }`}
                   >
-                    <video controls={true} width="100%" poster={video.poster}>
-                      <source src={video.src} type="video/mp4" />
+                    <video
+                      controls={true}
+                      width="100%"
+                      poster={video.poster.url}
+                    >
+                      <source src={video.file.url} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
