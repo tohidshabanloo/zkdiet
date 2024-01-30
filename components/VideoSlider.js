@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import styles from "./VideoSlider.module.css";
@@ -8,8 +8,22 @@ import CoverImage from "./cover-image";
 SwiperCore.use([Navigation]);
 const VideoSlider = ({ videos }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const swiperRef = useRef(null);
+  const videoRefs = useRef(
+    Array(videos.length)
+      .fill(null)
+      .map(() => React.createRef())
+  );
   const handleSlideChange = (swiper) => {
+    // Pause and reset non-active videos
+    videoRefs.current.forEach((videoRef, index) => {
+      if (index !== swiper.activeIndex) {
+        if (videoRef.current) {
+          videoRef.current.pause();
+          videoRef.current.currentTime = 0;
+        }
+      }
+    });
     setActiveIndex(swiper.activeIndex);
   };
 
@@ -38,6 +52,18 @@ const VideoSlider = ({ videos }) => {
       },
     },
   };
+
+  // Pause and reset all videos on component unmount
+  useEffect(() => {
+    return () => {
+      videoRefs.current.forEach((videoRef) => {
+        if (videoRef.current) {
+          videoRef.current.pause();
+          videoRef.current.currentTime = 0;
+        }
+      });
+    };
+  }, []);
 
   return (
     <div className="flex items-center justify-center ">
@@ -114,7 +140,7 @@ const VideoSlider = ({ videos }) => {
           </div>
 
           <div className={styles.videoSliderContainer}>
-            <Swiper {...swiperParams}>
+            <Swiper ref={swiperRef} {...swiperParams}>
               {videos.map((video, index) => (
                 <SwiperSlide key={index}>
                   <div
@@ -125,6 +151,7 @@ const VideoSlider = ({ videos }) => {
                     <video
                       controls={true}
                       width="100%"
+                      ref={videoRefs.current[index]}
                       poster={video.poster.url.replace(/^http:/, "https:")}
                     >
                       <source
