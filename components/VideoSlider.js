@@ -125,9 +125,12 @@ const VideoSlider = ({ videos }) => {
                     <video
                       controls={true}
                       width="100%"
-                      poster={video.poster.url}
+                      poster={video.poster.url.replace(/^http:/, "https:")}
                     >
-                      <source src={video.file.url} type="video/mp4" />
+                      <source
+                        src={video.file.url.replace(/^http:/, "https:")}
+                        type="video/mp4"
+                      />
                       Your browser does not support the video tag.
                     </video>
                   </div>
